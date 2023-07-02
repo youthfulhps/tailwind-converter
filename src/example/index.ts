@@ -1,2 +1,5 @@
-export * from '~/example/hello-world'
-export * from '~/example/type-example'
+const startLog = () => {
+  console.log('Hello tailwind converter!');
+};
+
+export default startLog;
