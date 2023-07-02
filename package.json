@@ -1,12 +1,10 @@
-{
-  "name": "@divlook/library-starter-example",
+{"name": "@youthfulhps/tailwind-converter",
   "version": "0.2.0",
-  "description": "TypeScript library starter",
+  "description": "Converts files written in css-in-js to tailwindCSS.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/divlook/ts-library-starter.git"
+    "url": "https://github.com/youthfulhps/tailwind-converter"
   },
-  "license": "MIT",
   "main": "./dist/lib.js",
   "module": "./dist/lib.mjs",
   "types": "./dist/lib.d.ts",
