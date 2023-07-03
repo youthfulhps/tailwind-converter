@@ -2,8 +2,8 @@ arrowParens: always
 bracketSameLine: false
 bracketSpacing: true
 printWidth: 80
-semi: false
+semi: true
 singleQuote: true
-tabWidth: 4
+tabWidth: 2
 trailingComma: all
 useTabs: false
