@@ -1,9 +1,21 @@
+## [0.2.3](https://github.com/youthfulhps/tailwind-converter/compare/v0.2.2...v0.2.3) (2023-07-03)
+
+
+### Code Refactoring
+
+* modify npm release option ([6b3b2e1](https://github.com/youthfulhps/tailwind-converter/commit/6b3b2e13aa2d2bf8e4fa244d6c802ff832807c93))
+
 ## [0.2.2](https://github.com/youthfulhps/tailwind-converter/compare/v0.2.1...v0.2.2) (2023-07-03)
 
 
 ### Code Refactoring
 
 * modify npm release option ([afa75c0](https://github.com/youthfulhps/tailwind-converter/commit/afa75c0f3d561d0a2d3852fe74b425238e54f978))
+
+
+### Miscellaneous Chores
+
+* **release:** v0.2.2 [skip ci] ([f2d0975](https://github.com/youthfulhps/tailwind-converter/commit/f2d09756413e52e5f021a4710565e540b294107f))
 
 ## [0.2.1](https://github.com/youthfulhps/tailwind-converter/compare/ade4c6bc6926faceaa2f8b421daef0049033f9e3...v0.2.1) (2023-07-03)
 
