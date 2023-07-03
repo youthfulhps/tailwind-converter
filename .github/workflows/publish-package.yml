@@ -1,11 +1,12 @@
 name: Publish Package
 
-on:
-  workflow_run:
-    workflows:
-      - 'Release'
-    types:
-      - completed
+# npm 배포 방지를 위해 임시 주석 처리
+#on:
+#  workflow_run:
+#    workflows:
+#      - 'Release'
+#    types:
+#      - completed
 
 jobs:
   build:
@@ -50,7 +51,7 @@ jobs:
           key: ${{ github.run_number }}
       - run: npm pkg delete scripts.prepare
       - run: npm pkg delete devDependencies
-      - run: npm publish --access restricted
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -71,6 +72,6 @@ jobs:
           key: ${{ github.run_number }}
       - run: npm pkg delete scripts.prepare
       - run: npm pkg delete devDependencies
-      - run: npm publish --access restricted
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
