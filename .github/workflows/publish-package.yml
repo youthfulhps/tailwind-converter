@@ -50,7 +50,7 @@ jobs:
           key: ${{ github.run_number }}
       - run: npm pkg delete scripts.prepare
       - run: npm pkg delete devDependencies
-      - run: npm publish --access public
+      - run: npm publish --access restricted
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -71,6 +71,6 @@ jobs:
           key: ${{ github.run_number }}
       - run: npm pkg delete scripts.prepare
       - run: npm pkg delete devDependencies
-      - run: npm publish --access public
+      - run: npm publish --access restricted
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
