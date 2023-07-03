@@ -1,5 +1,5 @@
-const startLog = () => {
-  console.log('Hello tailwind converter!');
+const startLog = (name: string) => {
+  return `Hello ${name}`;
 };
 
 export default startLog;
