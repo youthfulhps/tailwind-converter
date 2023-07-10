@@ -1,9 +1,22 @@
+## [0.3.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.2.3...v0.3.0) (2023-07-10)
+
+
+### Features
+
+* Add rollup plugin polyfill node dependency ([bd33eef](https://github.com/youthfulhps/tailwind-converter/commit/bd33eefc4bfe4a4d0754445507d5b83940a5aab4))
+* Apply rollup plugin polyfill node dependency ([5923d57](https://github.com/youthfulhps/tailwind-converter/commit/5923d573ccbbdbb9d1445c26ab9c15b1813954c4))
+
 ## [0.2.3](https://github.com/youthfulhps/tailwind-converter/compare/v0.2.2...v0.2.3) (2023-07-03)
 
 
 ### Code Refactoring
 
 * modify npm release option ([6b3b2e1](https://github.com/youthfulhps/tailwind-converter/commit/6b3b2e13aa2d2bf8e4fa244d6c802ff832807c93))
+
+
+### Miscellaneous Chores
+
+* **release:** v0.2.3 [skip ci] ([ec35ee6](https://github.com/youthfulhps/tailwind-converter/commit/ec35ee6b05cddb8be748ee66d5d6546c711a3da0))
 
 ## [0.2.2](https://github.com/youthfulhps/tailwind-converter/compare/v0.2.1...v0.2.2) (2023-07-03)
 

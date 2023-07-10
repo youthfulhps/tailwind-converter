@@ -1,6 +1,6 @@
 {
   "name": "@youthfulhps/tailwind-converter",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Converts files written in css-in-js to tailwindCSS.",
   "repository": {
     "type": "git",
