@@ -13,6 +13,9 @@
     "dist",
     "src"
   ],
+  "keywords": [
+    "cli"
+  ],
   "scripts": {
     "build": "tsc && vite build",
     "eslint": "eslint --cache --cache-file=node_modules/.cache/eslint/.eslintcache src/*",
