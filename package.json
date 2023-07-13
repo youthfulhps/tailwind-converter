@@ -18,6 +18,7 @@
   ],
   "scripts": {
     "build": "tsc && vite build",
+    "dev": "tsc && vite build && node dist/lib.js",
     "eslint": "eslint --cache --cache-file=node_modules/.cache/eslint/.eslintcache src/*",
     "eslint:fix": "pnpm eslint --fix",
     "local": "tsc && vite build --mode=development",
