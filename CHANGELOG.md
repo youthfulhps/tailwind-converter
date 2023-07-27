@@ -1,3 +1,20 @@
+## [0.4.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.3.0...v0.4.0) (2023-07-27)
+
+
+### Features
+
+* Add convert bin script ([a69a717](https://github.com/youthfulhps/tailwind-converter/commit/a69a7174dedc1e09f9c9df9da549b3c250cfe834))
+* Add csstype dependency for style property type checking ([aab2d81](https://github.com/youthfulhps/tailwind-converter/commit/aab2d81f9977dfc29634f9deb4a860f677226b28))
+* Add dev script ([a21ff60](https://github.com/youthfulhps/tailwind-converter/commit/a21ff60183d4466e81b7d53056f64b1cb5249a00))
+* Apply scrapRawScript to main execution function ([b07ae94](https://github.com/youthfulhps/tailwind-converter/commit/b07ae943a621dcd5dec55bb9f6b22fa4f3ce5347))
+* Implement function to scrap file raw script ([e804b26](https://github.com/youthfulhps/tailwind-converter/commit/e804b269c5c16568f40942792cc35232d2956fbb))
+
+
+### Miscellaneous Chores
+
+* Add project keyword metadata ([35a8e13](https://github.com/youthfulhps/tailwind-converter/commit/35a8e136a8a5b0fe484e56f8b90476a439fb72c9))
+* Delete unnecessary scraper test files ([1a79b32](https://github.com/youthfulhps/tailwind-converter/commit/1a79b32af33c984631e6a5102e1f20cb11164cf0))
+
 ## [0.3.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.2.3...v0.3.0) (2023-07-10)
 
 
@@ -5,6 +22,11 @@
 
 * Add rollup plugin polyfill node dependency ([bd33eef](https://github.com/youthfulhps/tailwind-converter/commit/bd33eefc4bfe4a4d0754445507d5b83940a5aab4))
 * Apply rollup plugin polyfill node dependency ([5923d57](https://github.com/youthfulhps/tailwind-converter/commit/5923d573ccbbdbb9d1445c26ab9c15b1813954c4))
+
+
+### Miscellaneous Chores
+
+* **release:** v0.3.0 [skip ci] ([9485710](https://github.com/youthfulhps/tailwind-converter/commit/948571021c0bfcec1e04edc201d21eaf89621c5d))
 
 ## [0.2.3](https://github.com/youthfulhps/tailwind-converter/compare/v0.2.2...v0.2.3) (2023-07-03)
 
