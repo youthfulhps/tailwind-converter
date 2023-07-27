@@ -13,8 +13,12 @@
     "dist",
     "src"
   ],
+  "keywords": [
+    "cli"
+  ],
   "scripts": {
     "build": "tsc && vite build",
+    "dev": "tsc && vite build && node dist/lib.js",
     "eslint": "eslint --cache --cache-file=node_modules/.cache/eslint/.eslintcache src/*",
     "eslint:fix": "pnpm eslint --fix",
     "local": "tsc && vite build --mode=development",
@@ -46,6 +50,10 @@
     "vite-plugin-dts": "^2.0.2"
   },
   "dependencies": {
+    "csstype": "^3.1.2",
     "rollup-plugin-polyfill-node": "^0.12.0"
+  },
+  "bin": {
+    "convert": "./bin/index.js"
   }
 }
