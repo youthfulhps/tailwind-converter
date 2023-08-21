@@ -1,3 +1,20 @@
+## [0.5.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.4.0...v0.5.0) (2023-08-21)
+
+
+### Features
+
+* Add prettier dependency to use parser and printer ([189be7d](https://github.com/youthfulhps/tailwind-converter/commit/189be7d5c94bdbb42688d5373fe610f13918a825))
+* Add rollup options to import prettier globally ([07342ea](https://github.com/youthfulhps/tailwind-converter/commit/07342ea016d6a6b564e18f7d0b5cebae1f416bfb))
+* Add test component file for development testing ([e862969](https://github.com/youthfulhps/tailwind-converter/commit/e862969d0a323d7578a27798f3c5730cd1d9dcae))
+* Implement extractor to extract required ast from preprocessed results of prettier parser ([2b51993](https://github.com/youthfulhps/tailwind-converter/commit/2b519935918419a016cc8a5b66de875e276076fe))
+* Implement incomplete main script ([7470209](https://github.com/youthfulhps/tailwind-converter/commit/747020946ed9fac72e0cb7335aa4fa13bd0bc60a))
+* Implement printer to return results of customized prettier ([3c4e876](https://github.com/youthfulhps/tailwind-converter/commit/3c4e876d4e9e23127f95a7062b3a16af419af4aa))
+
+
+### Miscellaneous Chores
+
+* Rename test component file ([00ff1b0](https://github.com/youthfulhps/tailwind-converter/commit/00ff1b0e2c1219b3d3439950838394ed2b444bdf))
+
 ## [0.4.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.3.0...v0.4.0) (2023-07-27)
 
 
@@ -14,6 +31,7 @@
 
 * Add project keyword metadata ([35a8e13](https://github.com/youthfulhps/tailwind-converter/commit/35a8e136a8a5b0fe484e56f8b90476a439fb72c9))
 * Delete unnecessary scraper test files ([1a79b32](https://github.com/youthfulhps/tailwind-converter/commit/1a79b32af33c984631e6a5102e1f20cb11164cf0))
+* **release:** v0.4.0 [skip ci] ([6892c33](https://github.com/youthfulhps/tailwind-converter/commit/6892c33576bbb4f37464348af02224b60bdf6ef3))
 
 ## [0.3.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.2.3...v0.3.0) (2023-07-10)
 
@@ -51,20 +69,4 @@
 ### Miscellaneous Chores
 
 * **release:** v0.2.2 [skip ci] ([f2d0975](https://github.com/youthfulhps/tailwind-converter/commit/f2d09756413e52e5f021a4710565e540b294107f))
-
-## [0.2.1](https://github.com/youthfulhps/tailwind-converter/compare/ade4c6bc6926faceaa2f8b421daef0049033f9e3...v0.2.1) (2023-07-03)
-
-
-### Code Refactoring
-
-* change prettier semi config ([de2ba33](https://github.com/youthfulhps/tailwind-converter/commit/de2ba338f3effffa77fff4643c84cc639aa27da4))
-* change prettier tab width ([740013c](https://github.com/youthfulhps/tailwind-converter/commit/740013c9743d9d09a02917c794dfca6f29c2d720))
-* modify project metadata ([c468119](https://github.com/youthfulhps/tailwind-converter/commit/c468119d44d88e08ea84ae60e2757825b5d4b611))
-* remove license file ([ade4c6b](https://github.com/youthfulhps/tailwind-converter/commit/ade4c6bc6926faceaa2f8b421daef0049033f9e3))
-* remove unused example files ([f1948d8](https://github.com/youthfulhps/tailwind-converter/commit/f1948d8b6307398fdb4307058ca2c3100e5f5dd2))
-
-
-### Miscellaneous Chores
-
-* **release:** v0.2.1 [skip ci] ([2549f0b](https://github.com/youthfulhps/tailwind-converter/commit/2549f0be3100f651d9088135821e3ed5a44e1bbc))
 
