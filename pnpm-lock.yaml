@@ -21,6 +21,9 @@ devDependencies:
   '@types/node':
     specifier: ^18.14.6
     version: 18.14.6
+  '@types/prettier':
+    specifier: ^2.7.3
+    version: 2.7.3
   '@typescript-eslint/eslint-plugin':
     specifier: ^5.54.0
     version: 5.54.0(@typescript-eslint/parser@5.54.0)(eslint@8.35.0)(typescript@4.9.5)
@@ -52,7 +55,7 @@ devDependencies:
     specifier: ^29.4.3
     version: 29.4.3
   prettier:
-    specifier: 2.8.4
+    specifier: ~2.8.4
     version: 2.8.4
   ts-jest:
     specifier: ^29.0.5
@@ -1205,8 +1208,8 @@ packages:
     resolution: {integrity: sha512-93+VvleD3mXwlLI/xASjw0FzKcwzl3OdTCzm1LaRfqgS21gfFtK3zDXM5Op9TeeMsJVOaJ2VRDpT9q4Y3d0AvA==}
     dev: true
 
-  /@types/prettier@2.7.2:
-    resolution: {integrity: sha512-KufADq8uQqo1pYKVIYzfKbJfBAc0sOeXqGbFaSpv8MRmC/zXgowNZmFcbngndGk922QDmOASEXUZCaY48gs4cg==}
+  /@types/prettier@2.7.3:
+    resolution: {integrity: sha512-+68kP9yzs4LMp7VNh8gdzMSPZFL44MLGqiHWvttYJe+6qnuVr4Ek9wSBQoveqY/r+LwjCcU29kNVkidwim+kYA==}
     dev: true
 
   /@types/semver@7.3.13:
@@ -2940,7 +2943,7 @@ packages:
       '@jest/transform': 29.4.3
       '@jest/types': 29.4.3
       '@types/babel__traverse': 7.18.3
-      '@types/prettier': 2.7.2
+      '@types/prettier': 2.7.3
       babel-preset-current-node-syntax: 1.0.1(@babel/core@7.21.0)
       chalk: 4.1.2
       expect: 29.4.3

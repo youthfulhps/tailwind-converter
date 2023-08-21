@@ -23,7 +23,12 @@ export default defineConfig(({ mode }) => {
        */
       watch: isDev ? {} : null,
       rollupOptions: {
-        external: ['fs/promises'],
+        external: ['fs/promises', /^prettier/],
+        output: {
+          globals: {
+            prettier: 'prettier',
+          },
+        },
       },
     },
     resolve: {
