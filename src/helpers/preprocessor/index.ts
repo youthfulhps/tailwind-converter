@@ -1,4 +1,4 @@
-import { isColor } from './color';
+import { isColor, preprocessColor } from './color';
 import {
   preprocessFontFamily,
   preprocessFontSize,
@@ -57,6 +57,10 @@ export function preprocessValue({ property, value }: CSSStyleEntity) {
     case 'width':
     case 'height':
       return preprocessDimension(value);
+    case 'color':
+    case 'background-color':
+    case 'border-color':
+      return preprocessColor(value);
     default:
       return value;
   }
