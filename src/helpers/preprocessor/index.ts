@@ -7,6 +7,7 @@ import {
   preprocessLineHeight,
 } from './text';
 import { preprocessSpacing } from '~/helpers/preprocessor/spacing';
+import { preprocessDimension } from '~/helpers/preprocessor/dimension';
 
 export type CSSStyleEntity = {
   property: string;
@@ -53,6 +54,9 @@ export function preprocessValue({ property, value }: CSSStyleEntity) {
     case 'margin-right':
     case 'margin-bottom':
       return preprocessSpacing(value);
+    case 'width':
+    case 'height':
+      return preprocessDimension(value);
     default:
       return value;
   }
