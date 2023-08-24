@@ -638,6 +638,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
     '-1px': '.-ml-px',
   },
   width: {
+    arbitrary: 'w',
     '0': '.w-0',
     '0.25rem': '.w-1',
     '0.5rem': '.w-2',
@@ -696,6 +697,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
     none: '.max-w-none',
   },
   height: {
+    arbitrary: 'h',
     '0': '.h-0',
     '0.25rem': '.h-1',
     '0.5rem': '.h-2',
