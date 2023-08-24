@@ -793,6 +793,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
   },
   'list-style-position': { inside: '.list-inside', outside: '.list-outside' },
   color: {
+    arbitrary: 'text',
     transparent: '.text-transparent',
     '#000': '.text-black',
     '#fff': '.text-white',
@@ -927,6 +928,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
     scroll: '.bg-scroll',
   },
   'background-color': {
+    arbitrary: 'bg',
     transparent: '.bg-transparent',
     '#000': '.bg-black',
     '#fff': '.bg-white',
@@ -1046,6 +1048,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
     contain: '.bg-contain',
   },
   'border-color': {
+    arbitrary: 'border',
     transparent: '.border-transparent',
     '#000': '.border-black',
     '#fff': '.border-white',
