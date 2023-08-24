@@ -323,6 +323,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
     columndense: '.grid-flow-col-dense',
   },
   padding: {
+    arbitrary: 'p',
     '0': '.p-0',
     '0.25rem': '.p-1',
     '0.5rem': '.p-2',
@@ -344,6 +345,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
     '1px': '.p-px',
   },
   'padding-top': {
+    arbitrary: 'pt',
     '0': '.pt-0',
     '0.25rem': '.pt-1',
     '0.5rem': '.pt-2',
@@ -365,6 +367,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
     '1px': '.pt-px',
   },
   'padding-right': {
+    arbitrary: 'pr',
     '0': '.pr-0',
     '0.25rem': '.pr-1',
     '0.5rem': '.pr-2',
@@ -386,6 +389,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
     '1px': '.pr-px',
   },
   'padding-bottom': {
+    arbitrary: 'pb',
     '0': '.pb-0',
     '0.25rem': '.pb-1',
     '0.5rem': '.pb-2',
@@ -407,6 +411,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
     '1px': '.pb-px',
   },
   'padding-left': {
+    arbitrary: 'pl',
     '0': '.pl-0',
     '0.25rem': '.pl-1',
     '0.5rem': '.pl-2',
@@ -428,6 +433,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
     '1px': '.pl-px',
   },
   margin: {
+    arbitrary: 'm',
     '0': '.m-0',
     '0.25rem': '.m-1',
     '0.5rem': '.m-2',
@@ -468,6 +474,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
     '-1px': '.-m-px',
   },
   'margin-top': {
+    arbitrary: 'mt',
     '0': '.mt-0',
     '0.25rem': '.mt-1',
     '0.5rem': '.mt-2',
@@ -508,6 +515,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
     '-1px': '.-mt-px',
   },
   'margin-right': {
+    arbitrary: 'mr',
     '0': '.mr-0',
     '0.25rem': '.mr-1',
     '0.5rem': '.mr-2',
@@ -548,6 +556,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
     '-1px': '.-mr-px',
   },
   'margin-bottom': {
+    arbitrary: 'mb',
     '0': '.mb-0',
     '0.25rem': '.mb-1',
     '0.5rem': '.mb-2',
@@ -588,6 +597,7 @@ const TAILWINDCLASS: { [key: string]: any } = {
     '-1px': '.-mb-px',
   },
   'margin-left': {
+    arbitrary: 'ml',
     '0': '.ml-0',
     '0.25rem': '.ml-1',
     '0.5rem': '.ml-2',
