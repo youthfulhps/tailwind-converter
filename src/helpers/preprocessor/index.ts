@@ -6,6 +6,7 @@ import {
   preprocessLetterSpacing,
   preprocessLineHeight,
 } from './text';
+import { preprocessSpacing } from '~/helpers/preprocessor/spacing';
 
 export type CSSStyleEntity = {
   property: string;
@@ -41,6 +42,17 @@ export function preprocessValue({ property, value }: CSSStyleEntity) {
       return preprocessLetterSpacing(value);
     case 'font-family':
       return preprocessFontFamily(value);
+    case 'padding':
+    case 'margin':
+    case 'padding-top':
+    case 'padding-left':
+    case 'padding-right':
+    case 'padding-bottom':
+    case 'margin-top':
+    case 'margin-left':
+    case 'margin-right':
+    case 'margin-bottom':
+      return preprocessSpacing(value);
     default:
       return value;
   }
