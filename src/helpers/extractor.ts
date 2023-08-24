@@ -107,10 +107,15 @@ export function isVariableDeclarationThroughStyledFunction(
   return tag?.object.name === 'styled';
 }
 
+export type StyleEntity = {
+  property: string;
+  value: string;
+};
+
 type ComponentEntity = {
   name: string;
   tag: string;
-  styles: [];
+  styles: StyleEntity[];
 };
 
 export function extractComponentEntityFromVariableDeclaration(
@@ -120,12 +125,21 @@ export function extractComponentEntityFromVariableDeclaration(
 
   const name = innerDeclaration?.id.name ?? '';
   const tag = innerDeclaration?.init?.tag?.property?.name ?? '';
-  const styles = innerDeclaration?.init?.quasi?.quasis[0].value.raw
-    .split(/[\n;]+/)
-    .filter((style: string) => !!style)
-    .map((style: string) => style.trim());
+  const styles = extractStylePropertyAndValue(
+    innerDeclaration?.init?.quasi?.quasis[0].value.raw
+      .split(/[\n;]+/)
+      .filter((style: string) => !!style)
+      .map((style: string) => style.trim()),
+  );
 
   return { name, tag, styles };
+}
+
+export function extractStylePropertyAndValue(styles: string[]): StyleEntity[] {
+  return styles.map((style) => {
+    const [property, value] = style.split(':').map((value) => value.trim());
+    return { property, value };
+  });
 }
 
 // * className 속성을 가지고 있지 않다면?
@@ -161,21 +175,29 @@ export function overrideClassNameAttributeRawValue(
   functionDeclarationIndex: number,
   returnStatementIndex: number,
   classNameAttributeIndex: number,
+  value: string,
 ) {
+  const draft =
+    ast.program.body[functionDeclarationIndex].body.body[returnStatementIndex]
+      .argument.openingElement.attributes[classNameAttributeIndex].value;
+
   ast.program.body[functionDeclarationIndex].body.body[
     returnStatementIndex
   ].argument.openingElement.attributes[
     classNameAttributeIndex
-  ].value.extra.rawValue = 'px-2 py-4';
+  ].value.extra.rawValue = `${draft.extra.rawValue} ${value}`;
+
   ast.program.body[functionDeclarationIndex].body.body[
     returnStatementIndex
   ].argument.openingElement.attributes[
     classNameAttributeIndex
-  ].value.extra.raw = '"px-2 py-4"';
+  ].value.extra.raw = `"${draft.extra.raw.slice(1, -1)} ${value}"`;
+
   ast.program.body[functionDeclarationIndex].body.body[
     returnStatementIndex
-  ].argument.openingElement.attributes[classNameAttributeIndex].value.value =
-    'px-2 py-4';
+  ].argument.openingElement.attributes[
+    classNameAttributeIndex
+  ].value.value = `${draft.value} ${value}`;
 
   return ast;
 }
