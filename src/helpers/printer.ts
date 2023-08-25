@@ -15,6 +15,7 @@ import {
   isVariableDeclarationThroughStyledFunction,
   overrideClassNameAttributeRawValue,
 } from '~/helpers/extractor';
+import { convertStyles } from '~/helpers/converter';
 
 export function extractPrinter(options: ParserOptions): Printer | undefined {
   const pluginOrNot = (
@@ -35,8 +36,9 @@ export function extractPrinter(options: ParserOptions): Printer | undefined {
 
 let defaultPrinter: Printer | undefined;
 
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-ignore
 function preprocess(ast: AST, options: Options): AST | Promise<AST> {
-  console.log(options);
   console.log('===========start!===========');
 
   // * Verify that the variable declaration is included.
@@ -60,6 +62,8 @@ function preprocess(ast: AST, options: Options): AST | Promise<AST> {
     .map((declaration) =>
       extractComponentEntityFromVariableDeclaration(declaration),
     );
+
+  componentDeclarations.forEach((c) => console.info(c.styles));
 
   functionDeclarationsThatReturnJSXElement.forEach(
     (functionDeclarationThatReturnJSXElement) => {
@@ -91,6 +95,7 @@ function preprocess(ast: AST, options: Options): AST | Promise<AST> {
           functionDeclarationIndex,
           returnStatementIndex[0],
           classNameAttributeIndex,
+          convertStyles(componentDeclarations[0].styles),
         );
       }
     },
