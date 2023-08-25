@@ -1,3 +1,20 @@
+## [0.6.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.5.0...v0.6.0) (2023-08-25)
+
+
+### Features
+
+* Add color property arbitrary key ([9ab1ca7](https://github.com/youthfulhps/tailwind-converter/commit/9ab1ca7edd8b505480cc2f610479ab150fb92898))
+* Add dimension property arbitrary key ([189e4f3](https://github.com/youthfulhps/tailwind-converter/commit/189e4f3e2c5ab3fa0f63b25ff1ee3dc3b3b18ef5))
+* Add spacing property arbitrary key ([5f7d4a3](https://github.com/youthfulhps/tailwind-converter/commit/5f7d4a3031a39d0e72c72aad35f1fcc3d45e4384))
+* Add tailwind class constants ([b5eed8d](https://github.com/youthfulhps/tailwind-converter/commit/b5eed8d1f0ffdfb08f582af530154d36e8110ba8))
+* Apply color-related preprocessor ([a0b748d](https://github.com/youthfulhps/tailwind-converter/commit/a0b748d0d99c6b5c7d15418adf760986f8fb0e7b))
+* Apply dimension-related preprocessor ([2825fd6](https://github.com/youthfulhps/tailwind-converter/commit/2825fd67796ee31865eea3087e7291f7da5166b4))
+* Apply spacing-related preprocessor ([556be05](https://github.com/youthfulhps/tailwind-converter/commit/556be05cc66c167e4863c87f8b668b0023512781))
+* Apply text-related preprocessor ([8a5b267](https://github.com/youthfulhps/tailwind-converter/commit/8a5b26717dcabcdd2599944687e7c26616b1b55b))
+* Implement initial converter that converts defined style into tailwind classes ([bf5ca2e](https://github.com/youthfulhps/tailwind-converter/commit/bf5ca2e85fa6e8a9ddfdfc46480e8e6ad4714aee))
+* Implement text preprocessor to match style value with defined text-related tailwind classes ([5882a9f](https://github.com/youthfulhps/tailwind-converter/commit/5882a9fd945e775d6d468b3749f212c9f8c32540))
+* Implement unit preprocessor to match unit of style values ([9b6ee49](https://github.com/youthfulhps/tailwind-converter/commit/9b6ee49662b90117498bde25aa9cc47d3fdb63bf))
+
 ## [0.5.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.4.0...v0.5.0) (2023-08-21)
 
 
@@ -13,6 +30,7 @@
 
 ### Miscellaneous Chores
 
+* **release:** v0.5.0 [skip ci] ([2452055](https://github.com/youthfulhps/tailwind-converter/commit/24520559c4d074a93fce37166740a5595afd2e6a))
 * Rename test component file ([00ff1b0](https://github.com/youthfulhps/tailwind-converter/commit/00ff1b0e2c1219b3d3439950838394ed2b444bdf))
 
 ## [0.4.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.3.0...v0.4.0) (2023-07-27)
@@ -57,16 +75,4 @@
 ### Miscellaneous Chores
 
 * **release:** v0.2.3 [skip ci] ([ec35ee6](https://github.com/youthfulhps/tailwind-converter/commit/ec35ee6b05cddb8be748ee66d5d6546c711a3da0))
-
-## [0.2.2](https://github.com/youthfulhps/tailwind-converter/compare/v0.2.1...v0.2.2) (2023-07-03)
-
-
-### Code Refactoring
-
-* modify npm release option ([afa75c0](https://github.com/youthfulhps/tailwind-converter/commit/afa75c0f3d561d0a2d3852fe74b425238e54f978))
-
-
-### Miscellaneous Chores
-
-* **release:** v0.2.2 [skip ci] ([f2d0975](https://github.com/youthfulhps/tailwind-converter/commit/f2d09756413e52e5f021a4710565e540b294107f))
 
