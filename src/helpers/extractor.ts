@@ -1,4 +1,10 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 import { AST } from 'prettier';
+import { generateJSXOpeningElementClassNameAttribute } from '~/helpers/generator';
+import { JSXElement } from 'estree-jsx';
+import { convertStyles } from '~/helpers/converter';
 
 export function extractVariableDeclarations(ast: AST): any[] {
   if (!ast.program || !ast.program.body.length) {
@@ -142,62 +148,29 @@ export function extractStylePropertyAndValue(styles: string[]): StyleEntity[] {
   });
 }
 
-// * className 속성을 가지고 있지 않다면?
+export function overrideClassnameAttributeRecursively(
+  parent: JSXElement,
+  componentDeclarations: ComponentEntity[],
+) {
+  const styles = componentDeclarations.filter(
+    (declaration) => declaration.name === parent.openingElement.name.name,
+  )[0].styles;
+  parent.openingElement.attributes =
+    generateJSXOpeningElementClassNameAttribute(
+      parent.openingElement.attributes,
+      convertStyles(styles),
+    );
 
-export function hasOpeningElementClassNameAttribute(openingElement: any) {
-  if (!openingElement.attributes || !openingElement.attributes.length) {
-    return false;
+  if (parent.children.length) {
+    parent.children.forEach((children, index) => {
+      if (children.type === 'JSXElement') {
+        overrideClassnameAttributeRecursively(
+          parent.children[index],
+          componentDeclarations,
+        );
+      }
+    });
   }
 
-  return openingElement.attributes.some(
-    (attribute: any) => attribute === 'className',
-  );
-}
-
-export function getClassNameAttributeIndexFromOpeningElement(
-  openingElement: any,
-) {
-  const { attributes } = openingElement;
-
-  let classNameAttributeIndex = 0;
-
-  attributes.forEach((attribute: any, index: number) => {
-    if (attribute.name === 'className') {
-      classNameAttributeIndex = index;
-    }
-  });
-
-  return classNameAttributeIndex;
-}
-
-export function overrideClassNameAttributeRawValue(
-  ast: any,
-  functionDeclarationIndex: number,
-  returnStatementIndex: number,
-  classNameAttributeIndex: number,
-  value: string,
-) {
-  const draft =
-    ast.program.body[functionDeclarationIndex].body.body[returnStatementIndex]
-      .argument.openingElement.attributes[classNameAttributeIndex].value;
-
-  ast.program.body[functionDeclarationIndex].body.body[
-    returnStatementIndex
-  ].argument.openingElement.attributes[
-    classNameAttributeIndex
-  ].value.extra.rawValue = `${draft.extra.rawValue} ${value}`;
-
-  ast.program.body[functionDeclarationIndex].body.body[
-    returnStatementIndex
-  ].argument.openingElement.attributes[
-    classNameAttributeIndex
-  ].value.extra.raw = `"${draft.extra.raw.slice(1, -1)} ${value}"`;
-
-  ast.program.body[functionDeclarationIndex].body.body[
-    returnStatementIndex
-  ].argument.openingElement.attributes[
-    classNameAttributeIndex
-  ].value.value = `${draft.value} ${value}`;
-
-  return ast;
+  return parent;
 }
