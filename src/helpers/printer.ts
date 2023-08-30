@@ -10,9 +10,9 @@ import {
   extractComponentEntityFromVariableDeclaration,
   extractFunctionDeclarationsThatReturnJSXElement,
   extractVariableDeclarations,
-  getJSXElementReturnStatementIndexFromFunctionDeclaration,
+  // getJSXElementReturnStatementIndexFromFunctionDeclaration,
   isVariableDeclarationThroughStyledFunction,
-  overrideClassnameAttributeRecursively,
+  // overrideClassnameAttributeRecursively,
 } from '~/helpers/extractor';
 
 export function extractPrinter(options: ParserOptions): Printer | undefined {
@@ -59,24 +59,26 @@ function preprocess(ast: AST, options: Options): AST | Promise<AST> {
       extractComponentEntityFromVariableDeclaration(declaration),
     );
 
-  functionDeclarationsThatReturnJSXElement.forEach(
-    (functionDeclarationThatReturnJSXElement) => {
-      const { declaration, index: functionDeclarationIndex } =
-        functionDeclarationThatReturnJSXElement;
+  global.componentDeclarations = componentDeclarations;
 
-      const returnStatementIndex =
-        getJSXElementReturnStatementIndexFromFunctionDeclaration(declaration);
-
-      ast.program.body[functionDeclarationIndex].body.body[
-        returnStatementIndex[0]
-      ].argument = overrideClassnameAttributeRecursively(
-        ast.program.body[functionDeclarationIndex].body.body[
-          returnStatementIndex[0]
-        ].argument,
-        componentDeclarations,
-      );
-    },
-  );
+  // functionDeclarationsThatReturnJSXElement.forEach(
+  //   (functionDeclarationThatReturnJSXElement) => {
+  //     const { declaration, index: functionDeclarationIndex } =
+  //       functionDeclarationThatReturnJSXElement;
+  //
+  //     const returnStatementIndex =
+  //       getJSXElementReturnStatementIndexFromFunctionDeclaration(declaration);
+  //
+  //     ast.program.body[functionDeclarationIndex].body.body[
+  //       returnStatementIndex[0]
+  //     ].argument = overrideClassnameAttributeRecursively(
+  //       ast.program.body[functionDeclarationIndex].body.body[
+  //         returnStatementIndex[0]
+  //       ].argument,
+  //       componentDeclarations,
+  //     );
+  //   },
+  // );
 
   return ast;
 }

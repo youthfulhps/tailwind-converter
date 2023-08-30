@@ -118,7 +118,7 @@ export type StyleEntity = {
   value: string;
 };
 
-type ComponentEntity = {
+export type ComponentEntity = {
   name: string;
   tag: string;
   styles: StyleEntity[];
