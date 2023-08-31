@@ -1,9 +1,5 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
-
 import { AST } from 'prettier';
 import { generateJSXOpeningElementClassNameAttribute } from '~/helpers/generator';
-import { JSXElement } from 'estree-jsx';
 import { convertStyles } from '~/helpers/converter';
 
 export function extractVariableDeclarations(ast: AST): any[] {
@@ -16,130 +12,16 @@ export function extractVariableDeclarations(ast: AST): any[] {
   );
 }
 
-export function extractFunctionDeclarationsThatReturnJSXElement(
-  ast: AST,
-): any[] {
-  if (!ast.program || !ast.program.body.length) {
-    return [];
-  }
-
-  const functionDeclarationsWithIndex: { declaration: any; index: number }[] =
-    [];
-
-  ast.program.body.forEach((declaration: any, index: number) => {
-    if (declaration.type === 'FunctionDeclaration') {
-      functionDeclarationsWithIndex.push({
-        declaration,
-        index,
-      });
-    }
-  });
-
-  return functionDeclarationsWithIndex.filter((declaration) =>
-    isJSXElementIncludedInFunctionReturns(declaration.declaration),
-  );
-}
-
-export function getJSXElementReturnStatementIndexFromFunctionDeclaration(
-  declaration: any,
-) {
-  const { body } = declaration.body;
-
-  if (!body.length) {
-    return [];
-  }
-
-  const returnStatementIndex: number[] = [];
-
-  body.forEach((statement: any, index: number) => {
-    if (statement.type === 'ReturnStatement') {
-      returnStatementIndex.push(index);
-    }
-  });
-
-  return returnStatementIndex;
-}
-
-export function isJSXElementIncludedInFunctionReturns(declaration: any) {
-  const { body } = declaration.body;
-
-  if (!body.length) {
-    return false;
-  }
-
-  const returnStatement = body.filter(
-    (statement: any) => statement.type === 'ReturnStatement',
-  );
-
-  if (!returnStatement.length) {
-    return false;
-  }
-
-  const { argument } = returnStatement[0];
-
-  return (
-    argument?.type === 'JSXElement' &&
-    argument?.openingElement?.type === 'JSXOpeningElement' &&
-    // It's either a self-closing tag or a close tag
-    (argument?.selfClosing ||
-      argument?.closingElement?.type === 'JSXClosingElement')
-  );
-}
-
-export function isVariableDeclarationThroughStyledFunction(
-  declaration: any,
-): boolean {
-  const innerDeclaration = declaration.declarations[0];
-
-  if (innerDeclaration?.type !== 'VariableDeclarator') {
-    return false;
-  }
-
-  const { init } = innerDeclaration;
-
-  if (init?.type !== 'TaggedTemplateExpression') {
-    return false;
-  }
-
-  const { quasi, tag } = init;
-
-  if (
-    quasi?.type !== 'TemplateLiteral' ||
-    quasi?.quasis[0].type !== 'TemplateElement'
-  ) {
-    return false;
-  }
-
-  return tag?.object.name === 'styled';
-}
-
 export type StyleEntity = {
   property: string;
   value: string;
 };
 
-type ComponentEntity = {
+type ComponentDeclaration = {
   name: string;
   tag: string;
   styles: StyleEntity[];
 };
-
-export function extractComponentEntityFromVariableDeclaration(
-  declaration: any,
-): ComponentEntity {
-  const innerDeclaration = declaration.declarations[0];
-
-  const name = innerDeclaration?.id.name ?? '';
-  const tag = innerDeclaration?.init?.tag?.property?.name ?? '';
-  const styles = extractStylePropertyAndValue(
-    innerDeclaration?.init?.quasi?.quasis[0].value.raw
-      .split(/[\n;]+/)
-      .filter((style: string) => !!style)
-      .map((style: string) => style.trim()),
-  );
-
-  return { name, tag, styles };
-}
 
 export function extractStylePropertyAndValue(styles: string[]): StyleEntity[] {
   return styles.map((style) => {
@@ -148,29 +30,145 @@ export function extractStylePropertyAndValue(styles: string[]): StyleEntity[] {
   });
 }
 
-export function overrideClassnameAttributeRecursively(
-  parent: JSXElement,
-  componentDeclarations: ComponentEntity[],
-) {
-  const styles = componentDeclarations.filter(
-    (declaration) => declaration.name === parent.openingElement.name.name,
-  )[0].styles;
-  parent.openingElement.attributes =
-    generateJSXOpeningElementClassNameAttribute(
-      parent.openingElement.attributes,
-      convertStyles(styles),
-    );
+export function isObject(arg: unknown): arg is object {
+  return typeof arg === 'object' && arg !== null;
+}
 
-  if (parent.children.length) {
-    parent.children.forEach((children, index) => {
-      if (children.type === 'JSXElement') {
-        overrideClassnameAttributeRecursively(
-          parent.children[index],
-          componentDeclarations,
-        );
+export function getVariableDeclarationThroughStyledRecursively(ast: AST) {
+  const componentDeclarations: ComponentDeclaration[] = [];
+
+  function recursion(node: unknown) {
+    if (!isObject(node) || !('type' in node)) {
+      return;
+    }
+
+    Object.entries(node).forEach(([key, value]) => {
+      if (key === 'type') {
+        return;
       }
+
+      if (Array.isArray(value)) {
+        value.forEach((childNode: unknown) => {
+          recursion(childNode);
+        });
+        return;
+      }
+
+      recursion(value);
     });
+
+    if (
+      node.type === 'VariableDeclarator' &&
+      'id' in node &&
+      isObject(node.id) &&
+      'type' in node.id &&
+      'name' in node.id &&
+      node.id.type === 'Identifier' &&
+      typeof node.id.name === 'string' && // 요게 컴포넌트 이름
+      'init' in node &&
+      isObject(node.init) &&
+      'type' in node.init &&
+      node.init.type === 'TaggedTemplateExpression' &&
+      'tag' in node.init &&
+      isObject(node.init.tag) &&
+      'object' in node.init.tag &&
+      isObject(node.init.tag.object) &&
+      'type' in node.init.tag.object &&
+      'name' in node.init.tag.object &&
+      node.init.tag.object.type === 'Identifier' &&
+      node.init.tag.object.name === 'styled' &&
+      'property' in node.init.tag &&
+      isObject(node.init.tag.property) &&
+      'name' in node.init.tag.property &&
+      typeof node.init.tag.property.name === 'string' && // 요게 태그 이름
+      'quasi' in node.init &&
+      isObject(node.init.quasi) &&
+      'type' in node.init.quasi &&
+      node.init.quasi.type === 'TemplateLiteral' &&
+      'quasis' in node.init.quasi &&
+      Array.isArray(node.init.quasi.quasis) &&
+      'type' in node.init.quasi.quasis[0] &&
+      node.init.quasi.quasis[0].type === 'TemplateElement' &&
+      'value' in node.init.quasi.quasis[0] &&
+      isObject(node.init.quasi.quasis[0].value)
+    ) {
+      const componentDeclaration: ComponentDeclaration = {
+        name: node.id.name,
+        tag: node.init.tag.property.name,
+        styles: extractStylePropertyAndValue(
+          node.init.quasi.quasis[0].value.raw
+            .split(/[\n;]+/)
+            .filter((style: string) => !!style)
+            .map((style: string) => style.trim()),
+        ),
+      };
+
+      componentDeclarations.push(componentDeclaration);
+    }
   }
 
-  return parent;
+  recursion(ast);
+
+  return componentDeclarations;
+}
+
+export function overrideClassnameAttributeRecursively(
+  ast: AST,
+  componentDeclarations: ComponentDeclaration[],
+) {
+  console.log(componentDeclarations);
+  function recursion(
+    node: unknown,
+    parentNode?: object & Record<'type', unknown>,
+  ) {
+    if (!isObject(node) || !('type' in node)) {
+      return;
+    }
+
+    Object.entries(node).forEach(([key, value]) => {
+      if (key === 'type') {
+        return;
+      }
+
+      if (Array.isArray(value)) {
+        value.forEach((childNode: unknown) => {
+          recursion(childNode, node);
+        });
+        return;
+      }
+
+      recursion(value, node);
+    });
+
+    if (node.type === 'JSXOpeningElement') {
+      if (
+        parentNode?.type === 'JSXElement' &&
+        'name' in node &&
+        isObject(node.name) &&
+        'type' in node.name &&
+        node.name.type === 'JSXIdentifier' &&
+        'name' in node.name &&
+        typeof node.name.name === 'string' &&
+        'attributes' in node &&
+        Array.isArray(node.attributes)
+      ) {
+        const elementName = node.name.name;
+
+        const targetComponentDeclarations = componentDeclarations.filter(
+          (componentDeclaration) => componentDeclaration.name === elementName,
+        );
+
+        if (targetComponentDeclarations.length) {
+          const newAttributes = generateJSXOpeningElementClassNameAttribute(
+            node.attributes,
+            convertStyles(targetComponentDeclarations[0].styles),
+          );
+
+          node.attributes = newAttributes;
+        }
+      }
+    }
+  }
+
+  recursion(ast);
 }
