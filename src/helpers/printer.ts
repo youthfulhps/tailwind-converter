@@ -7,11 +7,8 @@ import type {
   Options,
 } from 'prettier';
 import {
-  extractComponentEntityFromVariableDeclaration,
-  extractFunctionDeclarationsThatReturnJSXElement,
   extractVariableDeclarations,
-  getJSXElementReturnStatementIndexFromFunctionDeclaration,
-  isVariableDeclarationThroughStyledFunction,
+  getVariableDeclarationThroughStyledRecursively,
   overrideClassnameAttributeRecursively,
 } from '~/helpers/extractor';
 
@@ -39,44 +36,20 @@ let defaultPrinter: Printer | undefined;
 function preprocess(ast: AST, options: Options): AST | Promise<AST> {
   // * Verify that the variable declaration is included.
   const variableDeclarations = extractVariableDeclarations(ast);
-  const functionDeclarationsThatReturnJSXElement =
-    extractFunctionDeclarationsThatReturnJSXElement(ast);
 
   if (!variableDeclarations.length) {
     throw new Error('Please check if the variable declaration is included.');
   }
 
-  if (!functionDeclarationsThatReturnJSXElement.length) {
+  // * Verify that this is a variable declaration through the "styled" function.
+  const componentDeclarations =
+    getVariableDeclarationThroughStyledRecursively(ast);
+
+  if (!componentDeclarations.length) {
     throw new Error('Please check if the function declaration is included.');
   }
 
-  // * Verify that this is a variable declaration through the "styled" function.
-  const componentDeclarations = variableDeclarations
-    .filter((declaration) =>
-      isVariableDeclarationThroughStyledFunction(declaration),
-    )
-    .map((declaration) =>
-      extractComponentEntityFromVariableDeclaration(declaration),
-    );
-
-  functionDeclarationsThatReturnJSXElement.forEach(
-    (functionDeclarationThatReturnJSXElement) => {
-      const { declaration, index: functionDeclarationIndex } =
-        functionDeclarationThatReturnJSXElement;
-
-      const returnStatementIndex =
-        getJSXElementReturnStatementIndexFromFunctionDeclaration(declaration);
-
-      ast.program.body[functionDeclarationIndex].body.body[
-        returnStatementIndex[0]
-      ].argument = overrideClassnameAttributeRecursively(
-        ast.program.body[functionDeclarationIndex].body.body[
-          returnStatementIndex[0]
-        ].argument,
-        componentDeclarations,
-      );
-    },
-  );
+  overrideClassnameAttributeRecursively(ast, componentDeclarations);
 
   return ast;
 }
