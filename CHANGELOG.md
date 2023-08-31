@@ -1,3 +1,11 @@
+## [0.6.1](https://github.com/youthfulhps/tailwind-converter/compare/v0.6.0...v0.6.1) (2023-08-31)
+
+
+### Miscellaneous Chores
+
+* Rename parser to leader ([2027838](https://github.com/youthfulhps/tailwind-converter/commit/202783846f94391b495b5b4ae34c84e944297df8))
+* Update TestComponent return jsx element cases ([42a55dd](https://github.com/youthfulhps/tailwind-converter/commit/42a55dd2f2559a7d9d675245e18474f1bd8f762c))
+
 ## [0.6.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.5.0...v0.6.0) (2023-08-25)
 
 
@@ -14,6 +22,11 @@
 * Implement initial converter that converts defined style into tailwind classes ([bf5ca2e](https://github.com/youthfulhps/tailwind-converter/commit/bf5ca2e85fa6e8a9ddfdfc46480e8e6ad4714aee))
 * Implement text preprocessor to match style value with defined text-related tailwind classes ([5882a9f](https://github.com/youthfulhps/tailwind-converter/commit/5882a9fd945e775d6d468b3749f212c9f8c32540))
 * Implement unit preprocessor to match unit of style values ([9b6ee49](https://github.com/youthfulhps/tailwind-converter/commit/9b6ee49662b90117498bde25aa9cc47d3fdb63bf))
+
+
+### Miscellaneous Chores
+
+* **release:** v0.6.0 [skip ci] ([a77517e](https://github.com/youthfulhps/tailwind-converter/commit/a77517ebaef675a349696fa91d8a9e7b17d5218b))
 
 ## [0.5.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.4.0...v0.5.0) (2023-08-21)
 
@@ -63,16 +76,4 @@
 ### Miscellaneous Chores
 
 * **release:** v0.3.0 [skip ci] ([9485710](https://github.com/youthfulhps/tailwind-converter/commit/948571021c0bfcec1e04edc201d21eaf89621c5d))
-
-## [0.2.3](https://github.com/youthfulhps/tailwind-converter/compare/v0.2.2...v0.2.3) (2023-07-03)
-
-
-### Code Refactoring
-
-* modify npm release option ([6b3b2e1](https://github.com/youthfulhps/tailwind-converter/commit/6b3b2e13aa2d2bf8e4fa244d6c802ff832807c93))
-
-
-### Miscellaneous Chores
-
-* **release:** v0.2.3 [skip ci] ([ec35ee6](https://github.com/youthfulhps/tailwind-converter/commit/ec35ee6b05cddb8be748ee66d5d6546c711a3da0))
 
