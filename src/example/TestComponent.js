@@ -8,12 +8,24 @@ const StyledComponentA = styled.div`
 
 const StyledComponentB = styled.span`
   color: blue;
-  border: 1px solid black;
 `;
 
 function Component() {
-  return (
-    <StyledComponentA className="test">
+  const isTest = false;
+  if (isTest) {
+    return (
+      <StyledComponentA className="test test">
+        <StyledComponentB>테스트</StyledComponentB>
+      </StyledComponentA>
+    );
+  }
+
+  return isTest ? (
+    <StyledComponentA className="test test">
+      <StyledComponentB>테스트</StyledComponentB>
+    </StyledComponentA>
+  ) : (
+    <StyledComponentA className="test test">
       <StyledComponentB>테스트</StyledComponentB>
     </StyledComponentA>
   );
