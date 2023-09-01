@@ -1,8 +1,22 @@
+## [0.7.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.6.1...v0.7.0) (2023-09-01)
+
+
+### Features
+
+* Implement function to write file containing formatted script ([81debb2](https://github.com/youthfulhps/tailwind-converter/commit/81debb2dc319781ca313cbdc8eeb62b79ca8a77e))
+* Implement logic to write formatted script in same level of directory ([3c4895d](https://github.com/youthfulhps/tailwind-converter/commit/3c4895d2d8604c43fbd904e74df0887413cbf6d5))
+
+
+### Miscellaneous Chores
+
+* Modify test component script ([691cbd0](https://github.com/youthfulhps/tailwind-converter/commit/691cbd0ae32596ee9db67398ad850f6627f02b59))
+
 ## [0.6.1](https://github.com/youthfulhps/tailwind-converter/compare/v0.6.0...v0.6.1) (2023-08-31)
 
 
 ### Miscellaneous Chores
 
+* **release:** v0.6.1 [skip ci] ([ebbd99f](https://github.com/youthfulhps/tailwind-converter/commit/ebbd99fb799f74e73b385039340bd6b07a98cb9e))
 * Rename parser to leader ([2027838](https://github.com/youthfulhps/tailwind-converter/commit/202783846f94391b495b5b4ae34c84e944297df8))
 * Update TestComponent return jsx element cases ([42a55dd](https://github.com/youthfulhps/tailwind-converter/commit/42a55dd2f2559a7d9d675245e18474f1bd8f762c))
 
@@ -63,17 +77,4 @@
 * Add project keyword metadata ([35a8e13](https://github.com/youthfulhps/tailwind-converter/commit/35a8e136a8a5b0fe484e56f8b90476a439fb72c9))
 * Delete unnecessary scraper test files ([1a79b32](https://github.com/youthfulhps/tailwind-converter/commit/1a79b32af33c984631e6a5102e1f20cb11164cf0))
 * **release:** v0.4.0 [skip ci] ([6892c33](https://github.com/youthfulhps/tailwind-converter/commit/6892c33576bbb4f37464348af02224b60bdf6ef3))
-
-## [0.3.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.2.3...v0.3.0) (2023-07-10)
-
-
-### Features
-
-* Add rollup plugin polyfill node dependency ([bd33eef](https://github.com/youthfulhps/tailwind-converter/commit/bd33eefc4bfe4a4d0754445507d5b83940a5aab4))
-* Apply rollup plugin polyfill node dependency ([5923d57](https://github.com/youthfulhps/tailwind-converter/commit/5923d573ccbbdbb9d1445c26ab9c15b1813954c4))
-
-
-### Miscellaneous Chores
-
-* **release:** v0.3.0 [skip ci] ([9485710](https://github.com/youthfulhps/tailwind-converter/commit/948571021c0bfcec1e04edc201d21eaf89621c5d))
 
