@@ -1,5 +1,5 @@
 import { format } from 'prettier';
-import { scrapRawScript } from '~/helpers/reader';
+import { scrapRawScript, writeFormattedScript } from '~/helpers/reader';
 import plugin from './plugin';
 
 export default (async () => {
@@ -11,6 +11,16 @@ export default (async () => {
     const formattedScript = format(rawScript, {
       plugins: [plugin],
     });
-    console.log(formattedScript);
+
+    const writeDirectory = args[1].split('/');
+    const fileName = writeDirectory.pop();
+
+    if (fileName) {
+      const split = fileName.split('.');
+      const directory = `${writeDirectory.join('/')}/${split[0]}.tailwind.${
+        split[1]
+      }`;
+      await writeFormattedScript(directory, formattedScript);
+    }
   }
 })();

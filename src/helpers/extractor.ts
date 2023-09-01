@@ -116,7 +116,6 @@ export function overrideClassnameAttributeRecursively(
   ast: AST,
   componentDeclarations: ComponentDeclaration[],
 ) {
-  console.log(componentDeclarations);
   function recursion(
     node: unknown,
     parentNode?: object & Record<'type', unknown>,
@@ -150,7 +149,8 @@ export function overrideClassnameAttributeRecursively(
         'name' in node.name &&
         typeof node.name.name === 'string' &&
         'attributes' in node &&
-        Array.isArray(node.attributes)
+        Array.isArray(node.attributes) &&
+        'selfClosing' in node
       ) {
         const elementName = node.name.name;
 
@@ -159,12 +159,25 @@ export function overrideClassnameAttributeRecursively(
         );
 
         if (targetComponentDeclarations.length) {
+          const { tag, styles } = targetComponentDeclarations[0];
           const newAttributes = generateJSXOpeningElementClassNameAttribute(
             node.attributes,
-            convertStyles(targetComponentDeclarations[0].styles),
+            convertStyles(styles),
           );
-
+          node.name.name = tag;
           node.attributes = newAttributes;
+
+          if (!node.selfClosing) {
+            if (
+              'closingElement' in parentNode &&
+              isObject(parentNode.closingElement) &&
+              'name' in parentNode.closingElement &&
+              isObject(parentNode.closingElement.name) &&
+              'name' in parentNode.closingElement.name
+            ) {
+              parentNode.closingElement.name = tag;
+            }
+          }
         }
       }
     }
