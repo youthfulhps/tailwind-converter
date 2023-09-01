@@ -5,9 +5,12 @@ import {
   CSSStyleEntity,
   preprocessValue,
 } from '../preprocessor';
+import { preprocessShorthand } from '~/helpers/preprocessor/shorthand';
 
 export function convertStyles(styles: StyleEntity[]) {
-  return styles.map((style) => convertCss({ ...style })).join(' ');
+  return preprocessShorthand(styles)
+    .map((style) => convertCss({ ...style }))
+    .join(' ');
 }
 
 export function convertCss({ property, value }: CSSStyleEntity) {
@@ -15,7 +18,7 @@ export function convertCss({ property, value }: CSSStyleEntity) {
   const processedValue = preprocessValue({ property, value });
 
   if (!TAILWINDCLASS[property]) {
-    throw new Error('스타일 속성 없음');
+    return '';
   }
 
   if (!TAILWINDCLASS[property][processedValue]) {
