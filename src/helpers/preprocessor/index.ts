@@ -53,6 +53,7 @@ export function preprocessValue({ property, value }: CSSStyleEntity) {
     case 'margin-left':
     case 'margin-right':
     case 'margin-bottom':
+    case 'border-radius':
       return preprocessSpacing(value);
     case 'width':
     case 'height':
