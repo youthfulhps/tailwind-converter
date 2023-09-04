@@ -1,8 +1,16 @@
+## [0.7.6](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.5...v0.7.6) (2023-09-04)
+
+
+### Documentation
+
+* Update README ([78fe4d3](https://github.com/youthfulhps/tailwind-converter/commit/78fe4d309c5261ba76e8f3766ac874c7efe71fc1))
+
 ## [0.7.5](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.4...v0.7.5) (2023-09-04)
 
 
 ### Miscellaneous Chores
 
+* **release:** v0.7.5 [skip ci] ([50d87c6](https://github.com/youthfulhps/tailwind-converter/commit/50d87c67ede6b3d95cb8fc3b7cc9ba2e11c2afe8))
 * Remove unused csstype dependency ([2983481](https://github.com/youthfulhps/tailwind-converter/commit/29834813d5ba52dbd7962ada274231ce1d93129c))
 
 ## [0.7.4](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.3...v0.7.4) (2023-09-04)
@@ -29,12 +37,4 @@
 * Add git action development flow ([4b5afe7](https://github.com/youthfulhps/tailwind-converter/commit/4b5afe76b6acb1d903c87ffeae935fb5ed95e564))
 * Modify git action development flow ([d13eeb8](https://github.com/youthfulhps/tailwind-converter/commit/d13eeb81bb2e8ed7c6245ea821b6e2bdc005486b))
 * **release:** v0.7.2 [skip ci] ([edaf60a](https://github.com/youthfulhps/tailwind-converter/commit/edaf60a46609655328bb364cff9df3f9735786ed))
-
-## [0.7.1](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.0...v0.7.1) (2023-09-04)
-
-
-### Miscellaneous Chores
-
-* Modify tailwind convert command ([635f8bb](https://github.com/youthfulhps/tailwind-converter/commit/635f8bbfd9e1fc8e60972853209ba0bd0a90fc92))
-* **release:** v0.7.1 [skip ci] ([73f3d7a](https://github.com/youthfulhps/tailwind-converter/commit/73f3d7ad6d99f5d784777260cd463ff1dd30fa56))
 
