@@ -1,12 +1,11 @@
 name: Publish Package
 
-# npm 배포 방지를 위해 임시 주석 처리
-#on:
-#  workflow_run:
-#    workflows:
-#      - 'Release'
-#    types:
-#      - completed
+on:
+  workflow_run:
+    workflows:
+      - 'Release'
+    types:
+      - completed
 
 jobs:
   build:
