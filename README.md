@@ -1,16 +1,16 @@
 # tailwind-converter
 
-Extracts the style of a component defined through styled-components, 
-converts it into a tailwind utility class, and injects it into the 
+Extracts the styles of a component defined through styled-components, 
+converts it into a tailwind utility classes, and injects it into the 
 className property of that element.
 
 ## Example
 
-- Code before using tailwind converter
+- Before
 
 ![before](./images/before.png)
 
-- Code after using tailwind converter
+- After
 
 ![after](./images/after.png)
 
