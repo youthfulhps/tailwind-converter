@@ -1,9 +1,21 @@
+## [0.7.7](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.6...v0.7.7) (2023-09-04)
+
+
+### Miscellaneous Chores
+
+* Add license ([366cbba](https://github.com/youthfulhps/tailwind-converter/commit/366cbba953a23ab08eea7413a726db390ed89bf4))
+
 ## [0.7.6](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.5...v0.7.6) (2023-09-04)
 
 
 ### Documentation
 
 * Update README ([78fe4d3](https://github.com/youthfulhps/tailwind-converter/commit/78fe4d309c5261ba76e8f3766ac874c7efe71fc1))
+
+
+### Miscellaneous Chores
+
+* **release:** v0.7.6 [skip ci] ([c003f76](https://github.com/youthfulhps/tailwind-converter/commit/c003f76fa58020770f6d0921e94c59b27206bd9c))
 
 ## [0.7.5](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.4...v0.7.5) (2023-09-04)
 
@@ -28,13 +40,4 @@
 
 * Add vite rollup options ([e537d19](https://github.com/youthfulhps/tailwind-converter/commit/e537d19f0b67d43821cf58882570950536b1ceff))
 * **release:** v0.7.3 [skip ci] ([fd60b1a](https://github.com/youthfulhps/tailwind-converter/commit/fd60b1afa715118b7319e014c6dc14d85a3c1448))
-
-## [0.7.2](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.1...v0.7.2) (2023-09-04)
-
-
-### Miscellaneous Chores
-
-* Add git action development flow ([4b5afe7](https://github.com/youthfulhps/tailwind-converter/commit/4b5afe76b6acb1d903c87ffeae935fb5ed95e564))
-* Modify git action development flow ([d13eeb8](https://github.com/youthfulhps/tailwind-converter/commit/d13eeb81bb2e8ed7c6245ea821b6e2bdc005486b))
-* **release:** v0.7.2 [skip ci] ([edaf60a](https://github.com/youthfulhps/tailwind-converter/commit/edaf60a46609655328bb364cff9df3f9735786ed))
 
