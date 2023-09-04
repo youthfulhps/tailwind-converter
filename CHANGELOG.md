@@ -1,9 +1,18 @@
+## [0.7.2](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.1...v0.7.2) (2023-09-04)
+
+
+### Miscellaneous Chores
+
+* Add git action development flow ([4b5afe7](https://github.com/youthfulhps/tailwind-converter/commit/4b5afe76b6acb1d903c87ffeae935fb5ed95e564))
+* Modify git action development flow ([d13eeb8](https://github.com/youthfulhps/tailwind-converter/commit/d13eeb81bb2e8ed7c6245ea821b6e2bdc005486b))
+
 ## [0.7.1](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.0...v0.7.1) (2023-09-04)
 
 
 ### Miscellaneous Chores
 
 * Modify tailwind convert command ([635f8bb](https://github.com/youthfulhps/tailwind-converter/commit/635f8bbfd9e1fc8e60972853209ba0bd0a90fc92))
+* **release:** v0.7.1 [skip ci] ([73f3d7a](https://github.com/youthfulhps/tailwind-converter/commit/73f3d7ad6d99f5d784777260cd463ff1dd30fa56))
 
 ## [0.7.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.6.1...v0.7.0) (2023-09-01)
 
@@ -49,22 +58,4 @@
 ### Miscellaneous Chores
 
 * **release:** v0.6.0 [skip ci] ([a77517e](https://github.com/youthfulhps/tailwind-converter/commit/a77517ebaef675a349696fa91d8a9e7b17d5218b))
-
-## [0.5.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.4.0...v0.5.0) (2023-08-21)
-
-
-### Features
-
-* Add prettier dependency to use parser and printer ([189be7d](https://github.com/youthfulhps/tailwind-converter/commit/189be7d5c94bdbb42688d5373fe610f13918a825))
-* Add rollup options to import prettier globally ([07342ea](https://github.com/youthfulhps/tailwind-converter/commit/07342ea016d6a6b564e18f7d0b5cebae1f416bfb))
-* Add test component file for development testing ([e862969](https://github.com/youthfulhps/tailwind-converter/commit/e862969d0a323d7578a27798f3c5730cd1d9dcae))
-* Implement extractor to extract required ast from preprocessed results of prettier parser ([2b51993](https://github.com/youthfulhps/tailwind-converter/commit/2b519935918419a016cc8a5b66de875e276076fe))
-* Implement incomplete main script ([7470209](https://github.com/youthfulhps/tailwind-converter/commit/747020946ed9fac72e0cb7335aa4fa13bd0bc60a))
-* Implement printer to return results of customized prettier ([3c4e876](https://github.com/youthfulhps/tailwind-converter/commit/3c4e876d4e9e23127f95a7062b3a16af419af4aa))
-
-
-### Miscellaneous Chores
-
-* **release:** v0.5.0 [skip ci] ([2452055](https://github.com/youthfulhps/tailwind-converter/commit/24520559c4d074a93fce37166740a5595afd2e6a))
-* Rename test component file ([00ff1b0](https://github.com/youthfulhps/tailwind-converter/commit/00ff1b0e2c1219b3d3439950838394ed2b444bdf))
 
