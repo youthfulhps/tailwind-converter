@@ -1,9 +1,17 @@
+## [0.7.5](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.4...v0.7.5) (2023-09-04)
+
+
+### Miscellaneous Chores
+
+* Remove unused csstype dependency ([2983481](https://github.com/youthfulhps/tailwind-converter/commit/29834813d5ba52dbd7962ada274231ce1d93129c))
+
 ## [0.7.4](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.3...v0.7.4) (2023-09-04)
 
 
 ### Miscellaneous Chores
 
 * Modify prettier dependency group ([000f64c](https://github.com/youthfulhps/tailwind-converter/commit/000f64ce4596aeb1a087734c11980e1a66a4f718))
+* **release:** v0.7.4 [skip ci] ([f2d2e76](https://github.com/youthfulhps/tailwind-converter/commit/f2d2e76f8de09db60545235877f4b09a8418b301))
 
 ## [0.7.3](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.2...v0.7.3) (2023-09-04)
 
@@ -29,18 +37,4 @@
 
 * Modify tailwind convert command ([635f8bb](https://github.com/youthfulhps/tailwind-converter/commit/635f8bbfd9e1fc8e60972853209ba0bd0a90fc92))
 * **release:** v0.7.1 [skip ci] ([73f3d7a](https://github.com/youthfulhps/tailwind-converter/commit/73f3d7ad6d99f5d784777260cd463ff1dd30fa56))
-
-## [0.7.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.6.1...v0.7.0) (2023-09-01)
-
-
-### Features
-
-* Implement function to write file containing formatted script ([81debb2](https://github.com/youthfulhps/tailwind-converter/commit/81debb2dc319781ca313cbdc8eeb62b79ca8a77e))
-* Implement logic to write formatted script in same level of directory ([3c4895d](https://github.com/youthfulhps/tailwind-converter/commit/3c4895d2d8604c43fbd904e74df0887413cbf6d5))
-
-
-### Miscellaneous Chores
-
-* Modify test component script ([691cbd0](https://github.com/youthfulhps/tailwind-converter/commit/691cbd0ae32596ee9db67398ad850f6627f02b59))
-* **release:** v0.7.0 [skip ci] ([da64d3d](https://github.com/youthfulhps/tailwind-converter/commit/da64d3df515eb3833d915b332ba0127b48657fa1))
 
