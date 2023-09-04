@@ -55,6 +55,6 @@
     "rollup-plugin-polyfill-node": "^0.12.0"
   },
   "bin": {
-    "tailwind-convert": "./bin/index.js"
+    "tailwind-converter": "./bin/index.js"
   }
 }
