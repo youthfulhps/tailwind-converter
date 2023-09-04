@@ -1,9 +1,17 @@
+## [0.7.4](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.3...v0.7.4) (2023-09-04)
+
+
+### Miscellaneous Chores
+
+* Modify prettier dependency group ([000f64c](https://github.com/youthfulhps/tailwind-converter/commit/000f64ce4596aeb1a087734c11980e1a66a4f718))
+
 ## [0.7.3](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.2...v0.7.3) (2023-09-04)
 
 
 ### Miscellaneous Chores
 
 * Add vite rollup options ([e537d19](https://github.com/youthfulhps/tailwind-converter/commit/e537d19f0b67d43821cf58882570950536b1ceff))
+* **release:** v0.7.3 [skip ci] ([fd60b1a](https://github.com/youthfulhps/tailwind-converter/commit/fd60b1afa715118b7319e014c6dc14d85a3c1448))
 
 ## [0.7.2](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.1...v0.7.2) (2023-09-04)
 
@@ -35,13 +43,4 @@
 
 * Modify test component script ([691cbd0](https://github.com/youthfulhps/tailwind-converter/commit/691cbd0ae32596ee9db67398ad850f6627f02b59))
 * **release:** v0.7.0 [skip ci] ([da64d3d](https://github.com/youthfulhps/tailwind-converter/commit/da64d3df515eb3833d915b332ba0127b48657fa1))
-
-## [0.6.1](https://github.com/youthfulhps/tailwind-converter/compare/v0.6.0...v0.6.1) (2023-08-31)
-
-
-### Miscellaneous Chores
-
-* **release:** v0.6.1 [skip ci] ([ebbd99f](https://github.com/youthfulhps/tailwind-converter/commit/ebbd99fb799f74e73b385039340bd6b07a98cb9e))
-* Rename parser to leader ([2027838](https://github.com/youthfulhps/tailwind-converter/commit/202783846f94391b495b5b4ae34c84e944297df8))
-* Update TestComponent return jsx element cases ([42a55dd](https://github.com/youthfulhps/tailwind-converter/commit/42a55dd2f2559a7d9d675245e18474f1bd8f762c))
 
