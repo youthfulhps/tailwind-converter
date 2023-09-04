@@ -26,6 +26,7 @@ export default defineConfig(({ mode }) => {
         external: ['fs/promises', /^prettier/],
         output: {
           globals: {
+            'fs/promises': 'fs/promises',
             prettier: 'prettier',
           },
         },
