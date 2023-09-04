@@ -1,9 +1,17 @@
+## [0.7.8](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.7...v0.7.8) (2023-09-04)
+
+
+### Miscellaneous Chores
+
+* Modify tailwind converter shell command ([50dcccd](https://github.com/youthfulhps/tailwind-converter/commit/50dcccd1fee198d39f53ddb3b5b182a83bff552e))
+
 ## [0.7.7](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.6...v0.7.7) (2023-09-04)
 
 
 ### Miscellaneous Chores
 
 * Add license ([366cbba](https://github.com/youthfulhps/tailwind-converter/commit/366cbba953a23ab08eea7413a726db390ed89bf4))
+* **release:** v0.7.7 [skip ci] ([c9c3074](https://github.com/youthfulhps/tailwind-converter/commit/c9c30747daaaefe0396bd49d59f961f372fa3f75))
 
 ## [0.7.6](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.5...v0.7.6) (2023-09-04)
 
@@ -32,12 +40,4 @@
 
 * Modify prettier dependency group ([000f64c](https://github.com/youthfulhps/tailwind-converter/commit/000f64ce4596aeb1a087734c11980e1a66a4f718))
 * **release:** v0.7.4 [skip ci] ([f2d2e76](https://github.com/youthfulhps/tailwind-converter/commit/f2d2e76f8de09db60545235877f4b09a8418b301))
-
-## [0.7.3](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.2...v0.7.3) (2023-09-04)
-
-
-### Miscellaneous Chores
-
-* Add vite rollup options ([e537d19](https://github.com/youthfulhps/tailwind-converter/commit/e537d19f0b67d43821cf58882570950536b1ceff))
-* **release:** v0.7.3 [skip ci] ([fd60b1a](https://github.com/youthfulhps/tailwind-converter/commit/fd60b1afa715118b7319e014c6dc14d85a3c1448))
 
