@@ -1,9 +1,17 @@
+## [0.7.10](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.9...v0.7.10) (2023-09-05)
+
+
+### Miscellaneous Chores
+
+* Modify README ([3423c10](https://github.com/youthfulhps/tailwind-converter/commit/3423c10b19e3c9a9d036d376d9930063ae5c0907))
+
 ## [0.7.9](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.8...v0.7.9) (2023-09-04)
 
 
 ### Miscellaneous Chores
 
 * Modify README ([56d79e4](https://github.com/youthfulhps/tailwind-converter/commit/56d79e45039a49e9e097d03ef51372a6cac76fff))
+* **release:** v0.7.9 [skip ci] ([9ea7326](https://github.com/youthfulhps/tailwind-converter/commit/9ea73269b77ee8b2323ec36dce13727155dfc751))
 
 ## [0.7.8](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.7...v0.7.8) (2023-09-04)
 
@@ -32,12 +40,4 @@
 ### Miscellaneous Chores
 
 * **release:** v0.7.6 [skip ci] ([c003f76](https://github.com/youthfulhps/tailwind-converter/commit/c003f76fa58020770f6d0921e94c59b27206bd9c))
-
-## [0.7.5](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.4...v0.7.5) (2023-09-04)
-
-
-### Miscellaneous Chores
-
-* **release:** v0.7.5 [skip ci] ([50d87c6](https://github.com/youthfulhps/tailwind-converter/commit/50d87c67ede6b3d95cb8fc3b7cc9ba2e11c2afe8))
-* Remove unused csstype dependency ([2983481](https://github.com/youthfulhps/tailwind-converter/commit/29834813d5ba52dbd7962ada274231ce1d93129c))
 
