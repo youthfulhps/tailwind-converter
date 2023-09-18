@@ -1,19 +1,43 @@
 import TAILWINDCLASS from '../preprocessor/constants';
-import { StyleEntity } from '~/helpers/extractor';
-import {
-  preprocessProperty,
-  CSSStyleEntity,
-  preprocessValue,
-} from '../preprocessor';
+import { StyleDeclaration, StyleRule } from '~/helpers/extractor';
+import { preprocessProperty, preprocessValue } from '../preprocessor';
 import { preprocessShorthand } from '~/helpers/preprocessor/shorthand';
 
-export function convertStyles(styles: StyleEntity[]) {
-  return preprocessShorthand(styles)
-    .map((style) => convertCss({ ...style }))
-    .join(' ');
+export function convertStyles(styles: StyleRule[]) {
+  const rules = preprocessShorthand(styles);
+
+  return rules.reduce((combinedStyles, rule) => {
+    const selectors = convertSelector(rule.selectors);
+    const utilities = rule.declarations.map((declaration) =>
+      convertCss(declaration),
+    );
+
+    return (
+      combinedStyles +
+      selectors.reduce(
+        (combinedSelectors, selector) =>
+          combinedSelectors +
+          utilities.reduce(
+            (combinedUtilities, util) =>
+              combinedUtilities + selector + util + ' ',
+            '',
+          ),
+        '',
+      )
+    );
+  }, '');
 }
 
-export function convertCss({ property, value }: CSSStyleEntity) {
+export function convertSelector(selectors: string[]) {
+  return selectors.map((selector) =>
+    selector === '_' ? '' : `[${selector.replace('_ ', '&>')}]`,
+  );
+}
+
+export function convertCss(styleDeclaration: StyleDeclaration) {
+  let { property } = styleDeclaration;
+  const { value } = styleDeclaration;
+
   property = preprocessProperty({ property, value });
   const processedValue = preprocessValue({ property, value });
 
