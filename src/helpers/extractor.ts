@@ -1,6 +1,7 @@
 import { AST } from 'prettier';
 import { generateJSXOpeningElementClassNameAttribute } from '~/helpers/generator';
 import { convertStyles } from '~/helpers/converter';
+import { parseSass } from '~/helpers/css-parser';
 
 export function extractVariableDeclarations(ast: AST): any[] {
   if (!ast.program || !ast.program.body.length) {
@@ -12,23 +13,25 @@ export function extractVariableDeclarations(ast: AST): any[] {
   );
 }
 
-export type StyleEntity = {
+export type StyleRule = {
+  type: string;
+  selectors: string[];
+  declarations: StyleDeclaration[];
+  position: any;
+};
+
+export type StyleDeclaration = {
+  type: string;
   property: string;
   value: string;
+  position: any;
 };
 
 type ComponentDeclaration = {
   name: string;
   tag: string;
-  styles: StyleEntity[];
+  styles: StyleRule[];
 };
-
-export function extractStylePropertyAndValue(styles: string[]): StyleEntity[] {
-  return styles.map((style) => {
-    const [property, value] = style.split(':').map((value) => value.trim());
-    return { property, value };
-  });
-}
 
 export function isObject(arg: unknown): arg is object {
   return typeof arg === 'object' && arg !== null;
@@ -92,15 +95,12 @@ export function getVariableDeclarationThroughStyledRecursively(ast: AST) {
       'value' in node.init.quasi.quasis[0] &&
       isObject(node.init.quasi.quasis[0].value)
     ) {
+      const parsedScss = parseSass(node.init.quasi.quasis[0].value.raw);
+
       const componentDeclaration: ComponentDeclaration = {
         name: node.id.name,
         tag: node.init.tag.property.name,
-        styles: extractStylePropertyAndValue(
-          node.init.quasi.quasis[0].value.raw
-            .split(/[\n;]+/)
-            .filter((style: string) => !!style)
-            .map((style: string) => style.trim()),
-        ),
+        styles: parsedScss,
       };
 
       componentDeclarations.push(componentDeclaration);
@@ -160,6 +160,7 @@ export function overrideClassnameAttributeRecursively(
 
         if (targetComponentDeclarations.length) {
           const { tag, styles } = targetComponentDeclarations[0];
+
           const newAttributes = generateJSXOpeningElementClassNameAttribute(
             node.attributes,
             convertStyles(styles),

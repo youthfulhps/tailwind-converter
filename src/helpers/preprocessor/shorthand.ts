@@ -1,30 +1,35 @@
 import TAILWINDCLASS from './constants';
-import { StyleEntity } from '~/helpers/extractor';
+import { StyleDeclaration, StyleRule } from '~/helpers/extractor';
 import { isColor } from '~/helpers/preprocessor/color';
 
-export function preprocessShorthand(styles: StyleEntity[]) {
-  const init: StyleEntity[] = [];
+export function preprocessShorthand(styleRules: StyleRule[]) {
+  return styleRules.map((styleRule) => {
+    const init: StyleDeclaration[] = [];
 
-  return styles.reduce((sum, curr) => {
-    switch (curr.property) {
-      case 'padding':
-      case 'margin':
-        return [
-          ...sum,
-          ...preprocessSpacingShorthand(curr.property, curr.value),
-        ];
-      case 'border':
-        return [...sum, ...preprocessBorderShorthand(curr.value)];
-      default:
-        return [...sum, curr];
-    }
-  }, init);
+    return {
+      ...styleRule,
+      declarations: styleRule.declarations.reduce((sum, curr) => {
+        switch (curr.property) {
+          case 'padding':
+          case 'margin':
+            return [
+              ...sum,
+              ...preprocessSpacingShorthand(curr.property, curr.value),
+            ];
+          case 'border':
+            return [...sum, ...preprocessBorderShorthand(curr.value)];
+          default:
+            return [...sum, curr];
+        }
+      }, init),
+    };
+  });
 }
 
 export function preprocessSpacingShorthand(
   property: string,
   value: string,
-): StyleEntity[] {
+): StyleDeclaration[] {
   const values = value.split(' ');
 
   const propertyX = `${property}-x`;
@@ -38,10 +43,14 @@ export function preprocessSpacingShorthand(
     case 2:
       return [
         {
+          type: 'declaration',
+          position: null,
           property: propertyY,
           value: values[0],
         },
         {
+          type: 'declaration',
+          position: null,
           property: propertyX,
           value: values[1],
         },
@@ -49,14 +58,20 @@ export function preprocessSpacingShorthand(
     case 3:
       return [
         {
+          type: 'declaration',
+          position: null,
           property: propertyTop,
           value: values[0],
         },
         {
+          type: 'declaration',
+          position: null,
           property: propertyX,
           value: values[1],
         },
         {
+          type: 'declaration',
+          position: null,
           property: propertyBottom,
           value: values[2],
         },
@@ -64,18 +79,26 @@ export function preprocessSpacingShorthand(
     case 4:
       return [
         {
+          type: 'declaration',
+          position: null,
           property: propertyTop,
           value: values[0],
         },
         {
+          type: 'declaration',
+          position: null,
           property: propertyRight,
           value: values[1],
         },
         {
+          type: 'declaration',
+          position: null,
           property: propertyBottom,
           value: values[2],
         },
         {
+          type: 'declaration',
+          position: null,
           property: propertyLeft,
           value: values[3],
         },
@@ -84,6 +107,8 @@ export function preprocessSpacingShorthand(
     default:
       return [
         {
+          type: 'declaration',
+          position: null,
           property,
           value,
         },
@@ -91,7 +116,7 @@ export function preprocessSpacingShorthand(
   }
 }
 
-function preprocessBorderShorthand(value: string): StyleEntity[] {
+function preprocessBorderShorthand(value: string): StyleDeclaration[] {
   const values = value.split(' ');
 
   const borderStyle = findBorderStyle(values);
@@ -102,8 +127,10 @@ function preprocessBorderShorthand(value: string): StyleEntity[] {
     return [];
   }
 
-  const border: StyleEntity[] = [
+  const border: StyleDeclaration[] = [
     {
+      type: 'declaration',
+      position: null,
       property: 'border-style',
       value: borderStyle,
     },
@@ -111,6 +138,8 @@ function preprocessBorderShorthand(value: string): StyleEntity[] {
 
   if (borderWidth) {
     border.push({
+      type: 'declaration',
+      position: null,
       property: 'border-width',
       value: borderWidth,
     });
@@ -118,6 +147,8 @@ function preprocessBorderShorthand(value: string): StyleEntity[] {
 
   if (borderColor) {
     border.push({
+      type: 'declaration',
+      position: null,
       property: 'border-color',
       value: borderColor,
     });
