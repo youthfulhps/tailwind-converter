@@ -1,3 +1,10 @@
+## [0.7.12](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.11...v0.7.12) (2023-09-21)
+
+
+### Miscellaneous Chores
+
+* Update project keywords ([c6029ba](https://github.com/youthfulhps/tailwind-converter/commit/c6029ba26bb39f3ede5a68d70eb55b016d69385e))
+
 ## [0.7.11](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.10...v0.7.11) (2023-09-21)
 
 
@@ -7,14 +14,15 @@
 * Resolve css parser issue caused by interpolation ([9ee5bb5](https://github.com/youthfulhps/tailwind-converter/commit/9ee5bb5d4c0d9ead4170cd94fb7da151e8611747))
 
 
-### Miscellaneous Chores
-
-* Replace node-sass with sass dependency ([4a33378](https://github.com/youthfulhps/tailwind-converter/commit/4a33378c631b566848c97fe719069709492b67c6))
-
-
 ### Documentation
 
 * Update README ([7170512](https://github.com/youthfulhps/tailwind-converter/commit/71705125def4146377866fd029a0a6dee7ae25ad))
+
+
+### Miscellaneous Chores
+
+* **release:** v0.7.11 [skip ci] ([e0f32ae](https://github.com/youthfulhps/tailwind-converter/commit/e0f32ae61bf6c65462eb54137759e27f73673db9))
+* Replace node-sass with sass dependency ([4a33378](https://github.com/youthfulhps/tailwind-converter/commit/4a33378c631b566848c97fe719069709492b67c6))
 
 ## [0.7.10](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.9...v0.7.10) (2023-09-05)
 
@@ -39,12 +47,4 @@
 
 * Modify tailwind converter shell command ([50dcccd](https://github.com/youthfulhps/tailwind-converter/commit/50dcccd1fee198d39f53ddb3b5b182a83bff552e))
 * **release:** v0.7.8 [skip ci] ([1864f1d](https://github.com/youthfulhps/tailwind-converter/commit/1864f1d45a780ac8c45a15f6d43fda58da04909b))
-
-## [0.7.7](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.6...v0.7.7) (2023-09-04)
-
-
-### Miscellaneous Chores
-
-* Add license ([366cbba](https://github.com/youthfulhps/tailwind-converter/commit/366cbba953a23ab08eea7413a726db390ed89bf4))
-* **release:** v0.7.7 [skip ci] ([c9c3074](https://github.com/youthfulhps/tailwind-converter/commit/c9c30747daaaefe0396bd49d59f961f372fa3f75))
 
