@@ -19,7 +19,7 @@ export function convertStyles(styles: StyleRule[]) {
           combinedSelectors +
           utilities.reduce(
             (combinedUtilities, util) =>
-              combinedUtilities + selector + util + ' ',
+              combinedUtilities + `${selector}${selector ? ':' : ''}${util} `,
             '',
           ),
         '',
@@ -30,7 +30,9 @@ export function convertStyles(styles: StyleRule[]) {
 
 export function convertSelector(selectors: string[]) {
   return selectors.map((selector) =>
-    selector === '_' ? '' : `[${selector.replace('_ ', '&>')}]`,
+    selector === '_'
+      ? ''
+      : `[${selector.replace('_', '&').replaceAll(' ', '>')}]`,
   );
 }
 
