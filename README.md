@@ -50,7 +50,7 @@ This library provides a shell script. recommend a global installation for conven
 ## Limitation
 
 **Parameters passed to a tagged template literal function (styled) include 
-interpolation for conditional style definitions and css class definitions.**
+interpolation for conditional style definitions.**
 In this case, we're thinking about how to approach it, but because there's a 
 lot of room for issues, the current version only converts the simple style definition, 
 and the defined component using styled-components also retain the definition.
