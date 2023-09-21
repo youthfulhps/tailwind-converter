@@ -66,3 +66,17 @@ export function generateJSXOpeningElementClassNameAttribute(
 
   return attributes;
 }
+
+export function generateConcatenatedCSSTemplateLiteral(quasis: any[]) {
+  return quasis.reduce((sum, curr) => {
+    if (!curr.tail) {
+      const replaced = curr.value.raw.replace(/\n|\s/g, '');
+      if (replaced[replaced.length - 1] === ':') {
+        return sum + `${curr.value.raw} unset`;
+      }
+
+      return sum + curr.value.raw;
+    }
+    return sum + curr.value.raw;
+  }, '');
+}

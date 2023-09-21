@@ -1,5 +1,8 @@
 import { AST } from 'prettier';
-import { generateJSXOpeningElementClassNameAttribute } from '~/helpers/generator';
+import {
+  generateConcatenatedCSSTemplateLiteral,
+  generateJSXOpeningElementClassNameAttribute,
+} from '~/helpers/generator';
 import { convertStyles } from '~/helpers/converter';
 import { parseSass } from '~/helpers/css-parser';
 
@@ -95,12 +98,16 @@ export function getVariableDeclarationThroughStyledRecursively(ast: AST) {
       'value' in node.init.quasi.quasis[0] &&
       isObject(node.init.quasi.quasis[0].value)
     ) {
-      const parsedScss = parseSass(node.init.quasi.quasis[0].value.raw);
+      const sassScript = generateConcatenatedCSSTemplateLiteral(
+        node.init.quasi.quasis,
+      );
+
+      const parsedCSS = parseSass(sassScript);
 
       const componentDeclaration: ComponentDeclaration = {
         name: node.id.name,
         tag: node.init.tag.property.name,
-        styles: parsedScss,
+        styles: parsedCSS,
       };
 
       componentDeclarations.push(componentDeclaration);
