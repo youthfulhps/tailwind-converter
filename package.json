@@ -14,7 +14,12 @@
     "src"
   ],
   "keywords": [
-    "cli"
+    "cli",
+    "tailwindcss",
+    "styled-components",
+    "react",
+    "css-in-js",
+    "utility-first CSS"
   ],
   "scripts": {
     "build": "tsc && vite build",
