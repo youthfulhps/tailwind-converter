@@ -1,8 +1,16 @@
+## [0.7.13](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.12...v0.7.13) (2023-09-21)
+
+
+### Documentation
+
+* readme ([c76f255](https://github.com/youthfulhps/tailwind-converter/commit/c76f255fab669adeda4907ba64bbddc9693203d9))
+
 ## [0.7.12](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.11...v0.7.12) (2023-09-21)
 
 
 ### Miscellaneous Chores
 
+* **release:** v0.7.12 [skip ci] ([07316e3](https://github.com/youthfulhps/tailwind-converter/commit/07316e3f1921fb26ab35533daafae042eea3caf2))
 * Update project keywords ([c6029ba](https://github.com/youthfulhps/tailwind-converter/commit/c6029ba26bb39f3ede5a68d70eb55b016d69385e))
 
 ## [0.7.11](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.10...v0.7.11) (2023-09-21)
@@ -39,12 +47,4 @@
 
 * Modify README ([56d79e4](https://github.com/youthfulhps/tailwind-converter/commit/56d79e45039a49e9e097d03ef51372a6cac76fff))
 * **release:** v0.7.9 [skip ci] ([9ea7326](https://github.com/youthfulhps/tailwind-converter/commit/9ea73269b77ee8b2323ec36dce13727155dfc751))
-
-## [0.7.8](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.7...v0.7.8) (2023-09-04)
-
-
-### Miscellaneous Chores
-
-* Modify tailwind converter shell command ([50dcccd](https://github.com/youthfulhps/tailwind-converter/commit/50dcccd1fee198d39f53ddb3b5b182a83bff552e))
-* **release:** v0.7.8 [skip ci] ([1864f1d](https://github.com/youthfulhps/tailwind-converter/commit/1864f1d45a780ac8c45a15f6d43fda58da04909b))
 
