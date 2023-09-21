@@ -52,8 +52,11 @@ This library provides a shell script. recommend a global installation for conven
 **Parameters passed to a tagged template literal function (styled) include 
 interpolation for conditional style definitions.**
 In this case, we're thinking about how to approach it, but because there's a 
-lot of room for issues, the current version only converts the simple style definition, 
-and the defined component using styled-components also retain the definition.
+lot of room for issues.
+
+The current version replaces the interpolation contained in the style definition
+with the property 'unset' to convert it into a utility class, and also maintains
+the components defined by the function 'styled' to address the issue.
 
 
 
