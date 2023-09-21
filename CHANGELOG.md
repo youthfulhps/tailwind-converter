@@ -1,9 +1,28 @@
+## [0.7.11](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.10...v0.7.11) (2023-09-21)
+
+
+### Bug Fixes
+
+* Fix issue where the wrong class was created ([648c3d2](https://github.com/youthfulhps/tailwind-converter/commit/648c3d2a49ae0141b7cb7cee6be6692f019cd301))
+* Resolve css parser issue caused by interpolation ([9ee5bb5](https://github.com/youthfulhps/tailwind-converter/commit/9ee5bb5d4c0d9ead4170cd94fb7da151e8611747))
+
+
+### Miscellaneous Chores
+
+* Replace node-sass with sass dependency ([4a33378](https://github.com/youthfulhps/tailwind-converter/commit/4a33378c631b566848c97fe719069709492b67c6))
+
+
+### Documentation
+
+* Update README ([7170512](https://github.com/youthfulhps/tailwind-converter/commit/71705125def4146377866fd029a0a6dee7ae25ad))
+
 ## [0.7.10](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.9...v0.7.10) (2023-09-05)
 
 
 ### Miscellaneous Chores
 
 * Modify README ([3423c10](https://github.com/youthfulhps/tailwind-converter/commit/3423c10b19e3c9a9d036d376d9930063ae5c0907))
+* **release:** v0.7.10 [skip ci] ([83d5715](https://github.com/youthfulhps/tailwind-converter/commit/83d57154224e8bf68430f92bcde65eb4818d6e0f))
 
 ## [0.7.9](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.8...v0.7.9) (2023-09-04)
 
@@ -28,16 +47,4 @@
 
 * Add license ([366cbba](https://github.com/youthfulhps/tailwind-converter/commit/366cbba953a23ab08eea7413a726db390ed89bf4))
 * **release:** v0.7.7 [skip ci] ([c9c3074](https://github.com/youthfulhps/tailwind-converter/commit/c9c30747daaaefe0396bd49d59f961f372fa3f75))
-
-## [0.7.6](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.5...v0.7.6) (2023-09-04)
-
-
-### Documentation
-
-* Update README ([78fe4d3](https://github.com/youthfulhps/tailwind-converter/commit/78fe4d309c5261ba76e8f3766ac874c7efe71fc1))
-
-
-### Miscellaneous Chores
-
-* **release:** v0.7.6 [skip ci] ([c003f76](https://github.com/youthfulhps/tailwind-converter/commit/c003f76fa58020770f6d0921e94c59b27206bd9c))
 
