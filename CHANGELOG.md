@@ -1,9 +1,22 @@
+## [0.8.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.13...v0.8.0) (2023-10-18)
+
+
+### Features
+
+* Add chalk dependency for conversion result log ([f2f12e8](https://github.com/youthfulhps/tailwind-converter/commit/f2f12e8d30602609e934c41bccd5b1d67b6846f4))
+* Implement output log according to conversion results ([463308f](https://github.com/youthfulhps/tailwind-converter/commit/463308f83d36dce2719093594b6739248601b984))
+
 ## [0.7.13](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.12...v0.7.13) (2023-09-21)
 
 
 ### Documentation
 
 * readme ([c76f255](https://github.com/youthfulhps/tailwind-converter/commit/c76f255fab669adeda4907ba64bbddc9693203d9))
+
+
+### Miscellaneous Chores
+
+* **release:** v0.7.13 [skip ci] ([d273dbe](https://github.com/youthfulhps/tailwind-converter/commit/d273dbef3f9fab5fb391cc38039fb0887f431f39))
 
 ## [0.7.12](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.11...v0.7.12) (2023-09-21)
 
@@ -39,12 +52,4 @@
 
 * Modify README ([3423c10](https://github.com/youthfulhps/tailwind-converter/commit/3423c10b19e3c9a9d036d376d9930063ae5c0907))
 * **release:** v0.7.10 [skip ci] ([83d5715](https://github.com/youthfulhps/tailwind-converter/commit/83d57154224e8bf68430f92bcde65eb4818d6e0f))
-
-## [0.7.9](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.8...v0.7.9) (2023-09-04)
-
-
-### Miscellaneous Chores
-
-* Modify README ([56d79e4](https://github.com/youthfulhps/tailwind-converter/commit/56d79e45039a49e9e097d03ef51372a6cac76fff))
-* **release:** v0.7.9 [skip ci] ([9ea7326](https://github.com/youthfulhps/tailwind-converter/commit/9ea73269b77ee8b2323ec36dce13727155dfc751))
 
