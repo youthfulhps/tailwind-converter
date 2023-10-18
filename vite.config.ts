@@ -23,11 +23,12 @@ export default defineConfig(({ mode }) => {
        */
       watch: isDev ? {} : null,
       rollupOptions: {
-        external: ['fs/promises', /^prettier/],
+        external: ['fs/promises', /^prettier/, 'chalk'],
         output: {
           globals: {
             'fs/promises': 'fs/promises',
             prettier: 'prettier',
+            chalk: 'chalk',
           },
         },
       },
