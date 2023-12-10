@@ -9,26 +9,28 @@ import {
 export function convertStyles(styles: StyleRule[]) {
   const rules = preprocessShorthand(styles);
 
-  return rules.reduce((combinedStyles, rule) => {
-    const selectors = convertSelector(rule.selectors);
-    const utilities = rule.declarations.map((declaration: StyleDeclaration) =>
-      convertCss(declaration),
-    );
+  return rules
+    .reduce((combinedStyles, rule) => {
+      const selectors = convertSelector(rule.selectors);
+      const utilities = rule.declarations.map((declaration: StyleDeclaration) =>
+        convertCss(declaration),
+      );
 
-    return (
-      combinedStyles +
-      selectors.reduce(
-        (combinedSelectors, selector) =>
-          combinedSelectors +
-          utilities.reduce(
-            (combinedUtilities: string, util: string) =>
-              combinedUtilities + `${selector}${selector ? ':' : ''}${util} `,
-            '',
-          ),
-        '',
-      )
-    );
-  }, '');
+      return (
+        combinedStyles +
+        selectors.reduce(
+          (combinedSelectors, selector) =>
+            combinedSelectors +
+            utilities.reduce(
+              (combinedUtilities: string, util: string) =>
+                combinedUtilities + `${selector}${selector ? ':' : ''}${util} `,
+              '',
+            ),
+          '',
+        )
+      );
+    }, '')
+    .trimEnd();
 }
 
 export function convertSelector(selectors: string[]) {
