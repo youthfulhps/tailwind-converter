@@ -1,10 +1,11 @@
 import { AST } from 'prettier';
 import {
-  generateConcatenatedCSSTemplateLiteral,
-  generateJSXOpeningElementClassNameAttribute,
-} from '~/helpers/generator';
-import { convertStyles } from '~/helpers/converter';
-import { parseSass } from '~/helpers/css-parser';
+  manipulateConcatenatedCSSTemplateLiteral,
+  manipulateJSXOpeningElementClassNameAttribute,
+} from './manipulator';
+import { convertStyles } from './css-converter';
+import { parseSass } from './css-parser';
+import { ComponentDeclaration } from '~/types';
 
 export function extractVariableDeclarations(ast: AST): any[] {
   if (!ast.program || !ast.program.body.length) {
@@ -15,26 +16,6 @@ export function extractVariableDeclarations(ast: AST): any[] {
     (declaration: any) => declaration.type === 'VariableDeclaration',
   );
 }
-
-export type StyleRule = {
-  type: string;
-  selectors: string[];
-  declarations: StyleDeclaration[];
-  position: any;
-};
-
-export type StyleDeclaration = {
-  type: string;
-  property: string;
-  value: string;
-  position: any;
-};
-
-type ComponentDeclaration = {
-  name: string;
-  tag: string;
-  styles: StyleRule[];
-};
 
 export function isObject(arg: unknown): arg is object {
   return typeof arg === 'object' && arg !== null;
@@ -98,7 +79,7 @@ export function getVariableDeclarationThroughStyledRecursively(ast: AST) {
       'value' in node.init.quasi.quasis[0] &&
       isObject(node.init.quasi.quasis[0].value)
     ) {
-      const sassScript = generateConcatenatedCSSTemplateLiteral(
+      const sassScript = manipulateConcatenatedCSSTemplateLiteral(
         node.init.quasi.quasis,
       );
 
@@ -168,7 +149,7 @@ export function overrideClassnameAttributeRecursively(
         if (targetComponentDeclarations.length) {
           const { tag, styles } = targetComponentDeclarations[0];
 
-          const newAttributes = generateJSXOpeningElementClassNameAttribute(
+          const newAttributes = manipulateJSXOpeningElementClassNameAttribute(
             node.attributes,
             convertStyles(styles),
           );

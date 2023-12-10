@@ -2,7 +2,7 @@
 // @ts-nocheck
 import type { JSXAttribute, JSXSpreadAttribute } from 'estree-jsx';
 
-export function generateJSXOpeningElementClassNameAttribute(
+export function manipulateJSXOpeningElementClassNameAttribute(
   attributes: (JSXAttribute | JSXSpreadAttribute)[],
   attributeValue: string,
 ): JSXAttribute[] {
@@ -67,7 +67,7 @@ export function generateJSXOpeningElementClassNameAttribute(
   return attributes;
 }
 
-export function generateConcatenatedCSSTemplateLiteral(quasis: any[]) {
+export function manipulateConcatenatedCSSTemplateLiteral(quasis: any[]) {
   return quasis.reduce((sum, curr) => {
     if (!curr.tail) {
       const replaced = curr.value.raw.replace(/\n|\s/g, '');

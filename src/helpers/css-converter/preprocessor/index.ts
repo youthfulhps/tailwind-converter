@@ -6,8 +6,11 @@ import {
   preprocessLetterSpacing,
   preprocessLineHeight,
 } from './text';
-import { preprocessSpacing } from '~/helpers/preprocessor/spacing';
-import { preprocessDimension } from '~/helpers/preprocessor/dimension';
+import { preprocessSpacing } from './spacing';
+import { preprocessDimension } from './dimension';
+
+export { preprocessShorthand } from './shorthand';
+export { default as TAILWINDCLASS } from './constants';
 
 export type CSSStyleEntity = {
   property: string;

@@ -1,4 +1,4 @@
-import { convertUnit } from '~/helpers/preprocessor/unit';
+import { convertUnit } from './unit';
 
 export function preprocessFontWeight(value: string) {
   switch (value) {
