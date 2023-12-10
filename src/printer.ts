@@ -10,7 +10,7 @@ import {
   extractVariableDeclarations,
   getVariableDeclarationThroughStyledRecursively,
   overrideClassnameAttributeRecursively,
-} from '~/helpers/extractor';
+} from '~/helpers/css-extractor';
 
 export function extractPrinter(options: ParserOptions): Printer | undefined {
   const pluginOrNot = (

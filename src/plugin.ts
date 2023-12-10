@@ -1,7 +1,7 @@
 import { parsers as babelParsers } from 'prettier/parser-babel';
 import { parsers as typescriptParsers } from 'prettier/parser-typescript';
 
-import { printers } from './helpers/printer';
+import { printers } from './printer';
 
 export const parsers: { [parserName: string]: any } = {
   babel: {

@@ -1,14 +1,17 @@
-import TAILWINDCLASS from '../preprocessor/constants';
-import { StyleDeclaration, StyleRule } from '~/helpers/extractor';
-import { preprocessProperty, preprocessValue } from '../preprocessor';
-import { preprocessShorthand } from '~/helpers/preprocessor/shorthand';
+import { StyleDeclaration, StyleRule } from '~/types';
+import {
+  preprocessProperty,
+  preprocessValue,
+  preprocessShorthand,
+  TAILWINDCLASS,
+} from './preprocessor';
 
 export function convertStyles(styles: StyleRule[]) {
   const rules = preprocessShorthand(styles);
 
   return rules.reduce((combinedStyles, rule) => {
     const selectors = convertSelector(rule.selectors);
-    const utilities = rule.declarations.map((declaration) =>
+    const utilities = rule.declarations.map((declaration: StyleDeclaration) =>
       convertCss(declaration),
     );
 
@@ -18,7 +21,7 @@ export function convertStyles(styles: StyleRule[]) {
         (combinedSelectors, selector) =>
           combinedSelectors +
           utilities.reduce(
-            (combinedUtilities, util) =>
+            (combinedUtilities: string, util: string) =>
               combinedUtilities + `${selector}${selector ? ':' : ''}${util} `,
             '',
           ),
