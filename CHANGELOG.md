@@ -1,3 +1,17 @@
+## [0.8.1](https://github.com/youthfulhps/tailwind-converter/compare/v0.8.0...v0.8.1) (2023-12-10)
+
+
+### Bug Fixes
+
+* Modify style converter that manipulates value of className property ([97f5a04](https://github.com/youthfulhps/tailwind-converter/commit/97f5a0408665588b83bb28b86f2c6a307f58211b))
+* Specify parser used in prettier format function ([275431c](https://github.com/youthfulhps/tailwind-converter/commit/275431c9d97e1d9f7b04752d6ce149c8bc910805))
+
+
+### Code Refactoring
+
+* Redesign helpers ([e8917b9](https://github.com/youthfulhps/tailwind-converter/commit/e8917b913b81fd6bb5f38d5df1573c3a04b48912))
+* Remove unnecessary example directory ([6e1979e](https://github.com/youthfulhps/tailwind-converter/commit/6e1979edfd1177a43beb69afa88cda41e993d587))
+
 ## [0.8.0](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.13...v0.8.0) (2023-10-18)
 
 
@@ -5,6 +19,11 @@
 
 * Add chalk dependency for conversion result log ([f2f12e8](https://github.com/youthfulhps/tailwind-converter/commit/f2f12e8d30602609e934c41bccd5b1d67b6846f4))
 * Implement output log according to conversion results ([463308f](https://github.com/youthfulhps/tailwind-converter/commit/463308f83d36dce2719093594b6739248601b984))
+
+
+### Miscellaneous Chores
+
+* **release:** v0.8.0 [skip ci] ([0c4322f](https://github.com/youthfulhps/tailwind-converter/commit/0c4322fd0126faf29bb5e9fdb57c5379ccc0615a))
 
 ## [0.7.13](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.12...v0.7.13) (2023-09-21)
 
@@ -44,12 +63,4 @@
 
 * **release:** v0.7.11 [skip ci] ([e0f32ae](https://github.com/youthfulhps/tailwind-converter/commit/e0f32ae61bf6c65462eb54137759e27f73673db9))
 * Replace node-sass with sass dependency ([4a33378](https://github.com/youthfulhps/tailwind-converter/commit/4a33378c631b566848c97fe719069709492b67c6))
-
-## [0.7.10](https://github.com/youthfulhps/tailwind-converter/compare/v0.7.9...v0.7.10) (2023-09-05)
-
-
-### Miscellaneous Chores
-
-* Modify README ([3423c10](https://github.com/youthfulhps/tailwind-converter/commit/3423c10b19e3c9a9d036d376d9930063ae5c0907))
-* **release:** v0.7.10 [skip ci] ([83d5715](https://github.com/youthfulhps/tailwind-converter/commit/83d57154224e8bf68430f92bcde65eb4818d6e0f))
 
