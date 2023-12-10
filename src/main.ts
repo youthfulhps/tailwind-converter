@@ -13,6 +13,7 @@ export default (async () => {
 
       const formattedScript = format(rawScript, {
         plugins: [plugin],
+        parser: 'babel',
       });
 
       const writeDirectory = args[1].split('/');
