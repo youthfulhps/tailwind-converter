@@ -1,7 +1,7 @@
 import { format } from 'prettier';
-import { scrapRawScript, writeFormattedScript } from '~/helpers/reader';
 import plugin from './plugin';
 import chalk from 'chalk';
+import fs from 'fs/promises';
 
 export default (async () => {
   const args = process.argv.slice(2);
@@ -9,7 +9,7 @@ export default (async () => {
   if (args[0] === '--target') {
     try {
       const filePath = args[1];
-      const rawScript = await scrapRawScript(filePath);
+      const rawScript = await fs.readFile(filePath, 'utf-8');
 
       const formattedScript = format(rawScript, {
         plugins: [plugin],
@@ -26,7 +26,7 @@ export default (async () => {
         const directory = `${writeDirectory.join(
           '/',
         )}/${tailwindFileName}.${fileExtension}`;
-        await writeFormattedScript(directory, formattedScript);
+        await fs.writeFile(directory, formattedScript);
 
         console.log(
           chalk.green(

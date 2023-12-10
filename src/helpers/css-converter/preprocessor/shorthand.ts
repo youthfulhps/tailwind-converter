@@ -1,6 +1,6 @@
 import TAILWINDCLASS from './constants';
-import { StyleDeclaration, StyleRule } from '~/helpers/extractor';
-import { isColor } from '~/helpers/preprocessor/color';
+import { StyleDeclaration, StyleRule } from '~/types';
+import { isColor } from './color';
 
 export function preprocessShorthand(styleRules: StyleRule[]) {
   return styleRules.map((styleRule) => {
