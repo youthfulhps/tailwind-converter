@@ -8,7 +8,7 @@ export function preprocessShorthand(styleRules: StyleRule[]) {
 
     return {
       ...styleRule,
-      declarations: styleRule.declarations.reduce((sum, curr) => {
+      declarations: (styleRule?.declarations ?? []).reduce((sum, curr) => {
         switch (curr.property) {
           case 'padding':
           case 'margin':
