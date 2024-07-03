@@ -11,7 +11,7 @@ export function convertStyles(styles: StyleRule[]) {
 
   return rules
     .reduce((combinedStyles, rule) => {
-      const selectors = convertSelector(rule.selectors);
+      const selectors = convertSelector(rule?.selectors ?? []);
       const utilities = rule.declarations.map((declaration: StyleDeclaration) =>
         convertCss(declaration),
       );
